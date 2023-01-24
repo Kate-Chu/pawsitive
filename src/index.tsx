@@ -4,6 +4,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import About from './pages/About';
 import Animals from './pages/Animals';
+import Favorites from './pages/Favorites';
 import LandingPage from './pages/LandingPage';
 import Layout from './layouts/Layout';
 import Login from './pages/Login';
@@ -17,11 +18,12 @@ const router = createHashRouter([
     path: '/',
     element: <Layout />,
     children: [
-      { path: 'landing-page', element: <LandingPage /> },
+      { path: 'home', element: <LandingPage /> },
       { path: 'animals', element: <Animals /> },
+      { path: 'favorites', element: <Favorites /> },
       { path: 'sign-up', element: <SignUp /> },
       { path: 'login', element: <Login /> },
-      { path: 'about', element: <About /> },
+      { path: 'about-us', element: <About /> },
       { path: 'tutorial', element: <Tutorial /> },
     ],
   },
