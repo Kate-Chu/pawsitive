@@ -76,7 +76,7 @@ const Header = () => {
           </LinkItem>
           <li>
             <NavLink to="sign-in">
-              <ShadowButton>登入 註冊</ShadowButton>
+              <ShadowButton>登入｜註冊</ShadowButton>
             </NavLink>
           </li>
         </LinkList>
@@ -162,6 +162,7 @@ const LinkList = styled.ul`
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  padding-top: 0.65rem;
 `;
 
 const LinkItem = styled.li`
