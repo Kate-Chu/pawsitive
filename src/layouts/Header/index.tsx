@@ -20,14 +20,13 @@ const Header = () => {
       <LogoContainer>
         <Logo />
       </LogoContainer>
-      <ToggleButton htmlFor="nav-toggle">
-        <Input id="nav-toggle" type="checkbox" className="nav-checkbox" />
+      <SidebarButton>
         <div>
           <span />
           <span />
           <span />
         </div>
-      </ToggleButton>
+      </SidebarButton>
 
       <Nav>
         <LinkList>
@@ -118,11 +117,7 @@ const LogoContainer = styled.div`
   }
 `;
 
-const Input = styled.input`
-  opacity: 0;
-`;
-
-const ToggleButton = styled.label`
+const SidebarButton = styled.label`
   height: 2rem;
   position: relative;
 
@@ -134,7 +129,6 @@ const ToggleButton = styled.label`
     border-radius: 1rem;
     background-color: ${COLOR.orange};
     border: 0.15rem solid ${COLOR.darkBlue};
-    transition: 0.25s ease-in-out;
   }
 
   span:nth-child(1) {
@@ -147,22 +141,6 @@ const ToggleButton = styled.label`
 
   span:nth-child(3) {
     top: 95%;
-  }
-
-  .nav-checkbox:checked + div span:nth-child(1) {
-    rotate: 45deg;
-    scale: 0.95;
-    transform-origin: left center;
-  }
-
-  .nav-checkbox:checked + div span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-checkbox:checked + div span:nth-child(3) {
-    rotate: -45deg;
-    scale: 0.95;
-    transform-origin: left center;
   }
 
   ${MEDIA_QUERY_TAB_LAND} {
