@@ -47,6 +47,7 @@ const AboutUsContainer = styled.section`
 `;
 
 const Title = styled.header`
+  margin-bottom: 1.2rem;
   align-self: flex-start;
   ${theme.font.h1}
 `;

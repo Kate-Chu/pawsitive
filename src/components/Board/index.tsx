@@ -13,7 +13,7 @@ const Board: React.FC<BoardProps> = (props) => {
 };
 
 const BoardContainer = styled.section`
-  margin: 1.2rem 0 4rem;
+  margin: 0 0 4rem;
   padding: 2rem;
   width: 100%;
   background-color: ${theme.color.white};
