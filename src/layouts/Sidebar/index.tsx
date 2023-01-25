@@ -1,16 +1,12 @@
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
 import theme from 'src/styles/base';
-import ShadowButton from 'src/components/ShadowButton';
 
 const Sidebar = () => {
   return (
-    <SidebarBg>
+    <SidebarBg onScroll={(e) => e.stopPropagation()}>
       <SideBarContainer>
         <SidebarHead>
-          <Link to="sign-in">
-            <ShadowButton>登入 註冊</ShadowButton>
-          </Link>
           <CloseButton>
             <div>
               <span />
@@ -48,10 +44,15 @@ const Sidebar = () => {
 
 const SidebarBg = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   background-color: ${theme.color.gray[100]}dd;
+  z-index: 99;
+
+  ${theme.mediaQuery.tabLand} {
+    display: none;
+  }
 `;
 
 const SideBarContainer = styled.aside`
@@ -62,11 +63,13 @@ const SideBarContainer = styled.aside`
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 100;
+  overflow: hidden;
 `;
 
 const SidebarHead = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin: 1.2rem 1.2rem 1.8rem;
 `;
@@ -78,8 +81,8 @@ const CloseButton = styled.label`
   span {
     position: absolute;
     right: 0%;
-    height: 0.28rem;
-    width: 2.4rem;
+    height: 0.5rem;
+    width: 2.7rem;
     border-radius: 1rem;
     background-color: ${theme.color.orange};
     border: 0.15rem solid ${theme.color.darkBlue};

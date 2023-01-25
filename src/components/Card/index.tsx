@@ -92,6 +92,7 @@ const AnimalInfo = styled.section`
 
 const UpdatedDate = styled.p`
   margin-top: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
   color: ${theme.color.darkBlue};
 
@@ -110,5 +111,6 @@ const UpdatedDate = styled.p`
   ${theme.mediaQuery.tabLand} {
     text-align: left;
     width: 85%;
+    margin-bottom: 0;
   }
 `;

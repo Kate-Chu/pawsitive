@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import { styled } from '@linaria/react';
-import ShadowButton from 'src/components/ShadowButton';
 import theme from 'src/styles/base';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
@@ -69,11 +68,6 @@ const Header = () => {
               關於我們
             </NavLink>
           </LinkItem>
-          <li>
-            <NavLink to="sign-in">
-              <ShadowButton>登入｜註冊</ShadowButton>
-            </NavLink>
-          </li>
         </LinkList>
       </Nav>
     </AppHeader>
@@ -145,7 +139,7 @@ const SidebarButton = styled.label`
 `;
 
 const Nav = styled.nav`
-  width: 70%;
+  width: 60%;
   display: none;
 
   ${theme.mediaQuery.tabLand} {

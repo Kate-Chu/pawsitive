@@ -69,7 +69,7 @@ const ImgContainer = styled.button`
 
     &::before {
       background-color: ${theme.color.orange};
-      filter: brightness(1.5);
+      filter: brightness(1.65);
     }
   }
 
