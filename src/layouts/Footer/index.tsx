@@ -29,7 +29,7 @@ const LogoContainer = styled.span`
   display:inline-block
   height: min-content
   width: 2rem
-  margin:0.5rem> 1rem 0 0;
+  margin:0.4rem 1rem 0 0;
 `;
 
 const Text = styled.span`

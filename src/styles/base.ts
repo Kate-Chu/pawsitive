@@ -41,10 +41,8 @@ const theme = {
       'font-weight': '500',
     },
     p: {
-      h5: {
-        'font-size': '0.875rem',
-        'font-weight': '400',
-      },
+      'font-size': '1rem',
+      'font-weight': '400',
     },
   },
 
