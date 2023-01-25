@@ -1,5 +1,5 @@
 import { styled } from '@linaria/react';
-import { COLOR } from 'src/styles/base';
+import theme from 'src/styles/base';
 import { ReactComponent as Logo } from '../../assets/browser-icon.svg';
 
 const Footer = () => {
@@ -19,19 +19,17 @@ const AppFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${COLOR.darkBlue}
-  position:absolute;
-  bottom:0;
+  background-color: ${theme.color.darkBlue}
   width: 100%;
   padding: 0.5rem 0;
-  color: ${COLOR.white};
+  color: ${theme.color.white};
 `;
 
 const LogoContainer = styled.span`
   display:inline-block
   height: min-content
   width: 2rem
-  margin:0 1rem;
+  margin:0.5rem> 1rem 0 0;
 `;
 
 const Text = styled.span`

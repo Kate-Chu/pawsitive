@@ -1,6 +1,6 @@
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
-import { COLOR, MEDIA_QUERY_TAB_LAND } from 'src/styles/base';
+import theme from 'src/styles/base';
 import ShadowButton from 'src/components/ShadowButton';
 
 const Sidebar = () => {
@@ -51,11 +51,11 @@ const SidebarBg = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: ${COLOR.gray[100]}dd;
+  background-color: ${theme.color.gray[100]}dd;
 `;
 
 const SideBarContainer = styled.aside`
-  background-color: ${COLOR.white};
+  background-color: ${theme.color.white};
   opacity: 1;
   height: 100%;
   width: 85%;
@@ -81,8 +81,8 @@ const CloseButton = styled.label`
     height: 0.28rem;
     width: 2.4rem;
     border-radius: 1rem;
-    background-color: ${COLOR.orange};
-    border: 0.15rem solid ${COLOR.darkBlue};
+    background-color: ${theme.color.orange};
+    border: 0.15rem solid ${theme.color.darkBlue};
     transition: 0.25s ease-in-out;
   }
 
@@ -100,13 +100,13 @@ const CloseButton = styled.label`
     transform-origin: left center;
   }
 
-  ${MEDIA_QUERY_TAB_LAND} {
+  ${theme.mediaQuery.tabLand} {
     display: none;
   }
 `;
 
 const SidebarBody = styled.section`
-  background-color: ${COLOR.gray[20]};
+  background-color: ${theme.color.gray[20]};
   height: 80%;
 `;
 
@@ -125,20 +125,20 @@ const LinkItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid ${COLOR.darkBlue};
+  border-bottom: 1px solid ${theme.color.darkBlue};
   padding: 0.6rem 0;
 
   :first-child {
-    border-top: 1px solid ${COLOR.darkBlue};
+    border-top: 1px solid ${theme.color.darkBlue};
   }
 
   :active {
-    background-color: ${COLOR.gray[40]};
+    background-color: ${theme.color.gray[40]};
   }
 
   a {
     text-decoration: none;
-    color: ${COLOR.darkBlue};
+    color: ${theme.color.darkBlue};
     font-weight: 700;
     font-size: 1.13rem;
     width: 100%;

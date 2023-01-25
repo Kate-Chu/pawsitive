@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
-import About from './pages/About';
+import About from './pages/AboutUs';
 import Animals from './pages/Animals';
 import Favorites from './pages/Favorites';
 import LandingPage from './pages/LandingPage';

@@ -1,17 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { styled } from '@linaria/react';
 import ShadowButton from 'src/components/ShadowButton';
-import {
-  COLOR,
-  MEDIA_QUERY_DESK,
-  MEDIA_QUERY_TAB_LAND,
-  MEDIA_QUERY_TAB_PORT,
-} from 'src/styles/base';
+import theme from 'src/styles/base';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 const Header = () => {
   const activeStyle = {
-    color: COLOR.gray[100],
+    color: theme.color.gray[100],
     fontWeight: 800,
   };
 
@@ -88,31 +83,32 @@ const Header = () => {
 const AppHeader = styled.header`
   font-size: 1rem;
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  ${MEDIA_QUERY_TAB_LAND} {
+  ${theme.mediaQuery.tabLand} {
     padding: 1.5rem 2rem 2rem;
-    font-size: 1.5rem;
+    ${theme.font.h3}
   }
 
-  ${MEDIA_QUERY_DESK} {
-    font-size: 2rem;
+  ${theme.mediaQuery.desk} {
+    padding: 3rem;
+    ${theme.font.h1};
   }
 `;
 
 const LogoContainer = styled.div`
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   shrink: 0;
 
-  ${MEDIA_QUERY_TAB_PORT} {
+  ${theme.mediaQuery.tabPort} {
     width: 38%;
   }
-  ${MEDIA_QUERY_TAB_LAND} {
+  ${theme.mediaQuery.tabLand} {
     width: 24%;
   }
 `;
@@ -124,11 +120,11 @@ const SidebarButton = styled.label`
   span {
     position: absolute;
     right: 0%;
-    height: 0.28rem;
+    height: 0.5rem;
     width: 2.4rem;
     border-radius: 1rem;
-    background-color: ${COLOR.orange};
-    border: 0.15rem solid ${COLOR.darkBlue};
+    background-color: ${theme.color.orange};
+    border: 0.15rem solid ${theme.color.darkBlue};
   }
 
   span:nth-child(1) {
@@ -143,7 +139,7 @@ const SidebarButton = styled.label`
     top: 95%;
   }
 
-  ${MEDIA_QUERY_TAB_LAND} {
+  ${theme.mediaQuery.tabLand} {
     display: none;
   }
 `;
@@ -152,7 +148,7 @@ const Nav = styled.nav`
   width: 70%;
   display: none;
 
-  ${MEDIA_QUERY_TAB_LAND} {
+  ${theme.mediaQuery.tabLand} {
     display: block;
   }
 `;
@@ -168,12 +164,12 @@ const LinkList = styled.ul`
 const LinkItem = styled.li`
   a {
     text-decoration: none;
-    color: ${COLOR.gray[60]};
+    color: ${theme.color.gray[60]};
     font-weight: 800;
   }
 
   a:hover {
-    color: ${COLOR.orange};
+    color: ${theme.color.orange};
   }
 
   a:visited {
