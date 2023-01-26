@@ -6,8 +6,6 @@ import Animals from './pages/Animals';
 import Favorites from './pages/Favorites';
 import LandingPage from './pages/LandingPage';
 import Layout from './layouts/Layout';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
 import Tutorial from './pages/Tutorial';
 
 window.React = React;
@@ -20,8 +18,6 @@ const router = createHashRouter([
       { path: 'home', element: <LandingPage /> },
       { path: 'animals', element: <Animals /> },
       { path: 'favorites', element: <Favorites /> },
-      { path: 'sign-up', element: <SignUp /> },
-      { path: 'login', element: <Login /> },
       { path: 'about-us', element: <About /> },
       { path: 'tutorial', element: <Tutorial /> },
     ],

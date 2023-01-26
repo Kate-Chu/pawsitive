@@ -1,3 +1,4 @@
+import React from 'react';
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
 import theme from 'src/styles/base';

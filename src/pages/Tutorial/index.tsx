@@ -8,6 +8,7 @@ import food from '../../assets/food-icon_2.svg';
 const Tutorial = () => {
   return (
     <TutorialContainer>
+      <Title>領養流程</Title>
       <Illustration>
         <img src={dog} alt="dog" className="dog" />
         <img src={food} alt="food" className="dog-food" />
@@ -40,7 +41,23 @@ const Tutorial = () => {
 };
 
 const TutorialContainer = styled.section`
-  padding: 0 10rem;
+  width: 100%;
+  margin-left: -1rem;
+  padding: 0 3rem;
+
+  ${theme.mediaQuery.desk} {
+    margin-left: 0rem;
+    padding: 0 10rem;
+  }
+`;
+
+const Title = styled.header`
+  margin 1rem -1rem 1.5rem;
+  ${theme.font.h6}
+  
+  ${theme.mediaQuery.tabLand} {
+    display: none;
+  }
 `;
 
 const Illustration = styled.section`
@@ -53,13 +70,22 @@ const Illustration = styled.section`
 
   & .dog,
   & .cat {
-    width: 12rem;
+    width: 6rem;
     z-index: 2;
+
+    ${theme.mediaQuery.tabLand} {
+      width: 10rem;
+    }
+
+    ${theme.mediaQuery.desk} {
+      width: 12rem;
+    }
   }
 
   & .dog-food,
   & .cat-food {
     display: none;
+    z-index: 1;
 
     ${theme.mediaQuery.tabLand} {
       display: inline-block;
@@ -73,7 +99,6 @@ const Illustration = styled.section`
       &.cat-food {
         right: 20%;
         top: 60%;
-        z-index: 1;
       }
     }
   }

@@ -6,29 +6,52 @@ import replaceImg from '../../assets/image replace.svg';
 
 const Favorites = () => {
   return (
-    <AnimalsContainer>
-      <Card name="神奇的物種" place="外星球" img={replaceImg} />
-      <CTA>
-        還沒有收藏的動物唷...
-        <br />
-        快去 <Link to="/animals">所有動物</Link> 看看吧 🐕 🐈
-      </CTA>
-    </AnimalsContainer>
+    <FavoritesContainer>
+      <Title>我的收藏</Title>
+      <CardsContainer>
+        <Card name="神奇的物種" place="外星球" img={replaceImg} />
+        <CTA>
+          還沒有收藏的動物唷...
+          <br />
+          快去 <Link to="/animals">所有動物</Link> 看看吧 🐕 🐈
+        </CTA>
+      </CardsContainer>
+    </FavoritesContainer>
   );
 };
 
-const AnimalsContainer = styled.section`
+const FavoritesContainer = styled.section`
+  width: 100%;
+  margin-left: -1rem;
+  padding: 0 3rem;
+
+  ${theme.mediaQuery.desk} {
+    margin-left: 0rem;
+    padding: 0 10rem;
+  }
+`;
+
+const CardsContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 4rem;
   height: 80vh;
 
   ${theme.mediaQuery.tabPort} {
     flex-direction: row;
     margin: 1rem;
     height: 87vh;
+  }
+`;
+
+const Title = styled.header`
+  align-self: flex-start;
+  margin 1rem -1rem 1.5rem;
+  ${theme.font.h6}
+  
+  ${theme.mediaQuery.tabLand} {
+    display: none;
   }
 `;
 

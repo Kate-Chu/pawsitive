@@ -7,6 +7,7 @@ const AboutUs = () => {
   return (
     <AboutUsContainer>
       <Title>關於我們</Title>
+      <SubTitle>我們的使命</SubTitle>
       <Board>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum
@@ -38,18 +39,33 @@ const AboutUs = () => {
 };
 
 const AboutUsContainer = styled.section`
-  padding: 1rem 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 3rem;
+
+  ${theme.mediaQuery.desk} {
+    margin-left: 0rem;
+    padding: 0 10rem;
+  }
 `;
 
 const Title = styled.header`
-  margin-bottom: 1.2rem;
   align-self: flex-start;
-  ${theme.font.h1}
+  margin 1rem -1rem;
+  ${theme.font.h6}
+  
+  ${theme.mediaQuery.tabLand} {
+    display: none;
+  }
+`;
+
+const SubTitle = styled.h3`
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+  ${theme.font.h3}
 `;
 
 const ImgContainer = styled.button`
