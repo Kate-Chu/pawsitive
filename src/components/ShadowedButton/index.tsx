@@ -2,26 +2,28 @@ import React from 'react';
 import { styled } from '@linaria/react';
 import theme from 'src/styles/base';
 
-type ShadowButtonProps = {
+type ShadowedButtonProps = {
+  className?: string;
   children?: React.ReactNode;
   onClick?: () => void;
 };
 
-const ShadowButton: React.FC<ShadowButtonProps> = (props) => {
-  const { children, onClick } = props;
+const ShadowedButton: React.FC<ShadowedButtonProps> = (props) => {
+  const { children, onClick, className } = props;
 
   return (
-    <StyledShadowButton className="shadow-button" onClick={onClick}>
+    <StyledShadowedButton className={className} onClick={onClick}>
       {children}
-    </StyledShadowButton>
+    </StyledShadowedButton>
   );
 };
 
-const StyledShadowButton = styled.button`
-  background-color: ${theme.color.orange}};
+const StyledShadowedButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   padding: 0.5rem 1rem;
   border-radius: 0.2rem;
-  color: ${theme.color.white};
   ${theme.font.h5}
   box-shadow: 6.8px 6.8px 0 ${theme.color.darkBlue};
   cursor: pointer;
@@ -30,6 +32,10 @@ const StyledShadowButton = styled.button`
   :hover {
     transform: translateY(-0.2rem);
   }
+
+  img {
+    width: 1.5rem;
+  }
 `;
 
-export default ShadowButton;
+export default ShadowedButton;

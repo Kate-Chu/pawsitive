@@ -41,6 +41,22 @@ const globals = css`
       line-height: 1.7;
       color: ${theme.color.darkBlue};
     }
+
+    .bg-orange {
+      background-color: ${theme.color.orange};
+    }
+
+    .bg-white {
+      background-color: ${theme.color.white};
+    }
+
+    .darkBlue {
+      color: ${theme.color.darkBlue};
+    }
+
+    .white {
+      color: ${theme.color.white};
+    }
   }
 `;
 

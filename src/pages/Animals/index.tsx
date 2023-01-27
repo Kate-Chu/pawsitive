@@ -6,8 +6,9 @@ import { ThreeDots } from 'react-loader-spinner';
 
 import { getAnimalData } from 'src/api/animals';
 import Card from 'src/components/Card';
-import ShadowButton from 'src/components/ButtonWithShadow';
+import ButtonWithShadow from 'src/components/ShadowedButton';
 import theme from 'src/styles/base';
+import filterIcon from '../../assets/filter.svg';
 
 const Animals = () => {
   const [count, setCount] = useState(20);
@@ -27,6 +28,12 @@ const Animals = () => {
   return (
     <AnimalsContainer>
       <Title>所有動物</Title>
+      <FilterBtnWrapper>
+        <ButtonWithShadow className="darkBlue bg-white">
+          <img src={filterIcon} alt="filter button" />
+          <span>篩選</span>
+        </ButtonWithShadow>
+      </FilterBtnWrapper>
       <CardsContainer>
         {isSuccess ? (
           data.data.map((item) => {
@@ -67,7 +74,9 @@ const Animals = () => {
           </SpinnerWrapper>
         )}
       </CardsContainer>
-      <ShadowButton onClick={onClick}>顯示更多內容</ShadowButton>
+      <ButtonWithShadow onClick={onClick} className="bg-orange white">
+        顯示更多內容
+      </ButtonWithShadow>
     </AnimalsContainer>
   );
 };
@@ -90,6 +99,12 @@ const Title = styled.header`
   ${theme.mediaQuery.tabLand} {
     display: none;
   }
+`;
+
+const FilterBtnWrapper = styled.div`
+  margin: 0 0 1.5rem;
+  align-self: flex-start;
+  width: 10rem;
 `;
 
 const CardsContainer = styled.section`
