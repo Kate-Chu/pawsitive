@@ -7,8 +7,10 @@ import { ThreeDots } from 'react-loader-spinner';
 import { getAnimalData } from 'src/api/animals';
 import Card from 'src/components/Card';
 import ButtonWithShadow from 'src/components/ShadowedButton';
+import CircleButton from 'src/components/CircleButton';
 import theme from 'src/styles/base';
 import filterIcon from '../../assets/filter.svg';
+import topIcon from '../../assets/top.svg';
 
 const Animals = () => {
   const [count, setCount] = useState(20);
@@ -18,11 +20,18 @@ const Animals = () => {
     queryFn: () => getAnimalData(count),
   });
 
-  const onClick = () => {
+  const onClickFetchMore = () => {
     flushSync(() => {
       setCount((prev) => prev + 20);
     });
     refetch();
+  };
+
+  const onClickScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -74,9 +83,14 @@ const Animals = () => {
           </SpinnerWrapper>
         )}
       </CardsContainer>
-      <ButtonWithShadow onClick={onClick} className="bg-orange white">
+      <ButtonWithShadow onClick={onClickFetchMore} className="bg-orange white">
         顯示更多內容
       </ButtonWithShadow>
+      <TopBtnWrapper>
+        <CircleButton onClick={onClickScrollToTop}>
+          <img src={topIcon} alt="return top" />
+        </CircleButton>
+      </TopBtnWrapper>
     </AnimalsContainer>
   );
 };
@@ -89,6 +103,7 @@ const AnimalsContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const Title = styled.header`
@@ -117,4 +132,25 @@ const SpinnerWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+`;
+
+const TopBtnWrapper = styled.div`
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  ${theme.mediaQuery.tabPort} {
+    bottom: 4.5rem;
+    right: 4.5rem;
+  }
+
+  ${theme.mediaQuery.tabLand} {
+    bottom: 5rem;
+    right: 5rem;
+  }
+
+  ${theme.mediaQuery.bigDesk} {
+    bottom: 6rem;
+    right: 6rem;
+  }
 `;
