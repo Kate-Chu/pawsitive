@@ -2,20 +2,22 @@ import React from 'react';
 import { styled } from '@linaria/react';
 import theme from 'src/styles/base';
 import moreIcon from '../../assets/more.svg';
+import replaceImage from '../../assets/image replace.svg';
 
 type CardProps = {
   img: string;
   name: string;
   place: string;
+  updateDate?: string;
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { img, name, place } = props;
+  const { img, name, place, updateDate } = props;
 
   return (
     <AnimalData>
       <CardContainer>
-        <AnimalImg src={img} alt="animal" />
+        <AnimalImg src={img.length ? img : replaceImage} alt="animal" />
         <AnimalName>{name}</AnimalName>
         <AnimalInfo>
           <p>{place}</p>
@@ -24,10 +26,12 @@ const Card: React.FC<CardProps> = (props) => {
           </span>
         </AnimalInfo>
       </CardContainer>
-      <UpdatedDate>
-        <strong>更新日期</strong>
-        <span>2023-1-24</span>
-      </UpdatedDate>
+      {updateDate && (
+        <UpdatedDate>
+          <strong>更新日期</strong>
+          <span>{updateDate.replaceAll('/', '-')}</span>
+        </UpdatedDate>
+      )}
     </AnimalData>
   );
 };

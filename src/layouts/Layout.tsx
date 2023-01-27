@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Outlet } from 'react-router-dom';
 import { css } from '@linaria/core';
 import theme from 'src/styles/base';
@@ -5,13 +6,17 @@ import Header from './Header';
 import Footer from './Footer';
 // import Sidebar from './Sidebar';
 
+const queryClient = new QueryClient();
+
 const Layout = () => {
   return (
     <div className={globals}>
       <Header />
       {/* <Sidebar /> */}
       <main>
-        <Outlet />
+        <QueryClientProvider client={queryClient}>
+          <Outlet />
+        </QueryClientProvider>
       </main>
       <Footer />
     </div>
