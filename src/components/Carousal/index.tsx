@@ -1,5 +1,5 @@
 import { styled } from '@linaria/react';
-import theme from 'src/styles/base';
+import theme from '../../styles/base';
 import animalImage from '../../assets/image replace.svg';
 import arrow from '../../assets/arrow.svg';
 

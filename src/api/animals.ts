@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { AnimalDataType } from 'src/types';
+import type { AnimalDataType } from '../types';
 
 const OFFICIAL_API =
   'https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL';

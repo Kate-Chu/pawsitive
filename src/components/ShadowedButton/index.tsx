@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@linaria/react';
-import theme from 'src/styles/base';
+import theme from '../../styles/base';
 
 type ShadowedButtonProps = {
   className?: string;

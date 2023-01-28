@@ -1,6 +1,6 @@
 import { styled } from '@linaria/react';
-import Board from 'src/components/Board';
-import theme from 'src/styles/base';
+import Board from '../../components/Board';
+import theme from '../../styles/base';
 import foodIcon from '../../assets/food-icon_2.svg';
 
 const AboutUs = () => {

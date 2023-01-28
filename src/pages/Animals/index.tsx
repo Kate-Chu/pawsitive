@@ -4,11 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
 import { ThreeDots } from 'react-loader-spinner';
 
-import { getAnimalData } from 'src/api/animals';
-import Card from 'src/components/Card';
-import ButtonWithShadow from 'src/components/ShadowedButton';
-import CircleButton from 'src/components/CircleButton';
-import theme from 'src/styles/base';
+import { getAnimalData } from '../../api/animals';
+import Card from '../../components/Card';
+import ButtonWithShadow from '../../components/ShadowedButton';
+import CircleButton from '../../components/CircleButton';
+import theme from '../../styles/base';
 import filterIcon from '../../assets/filter.svg';
 import topIcon from '../../assets/top.svg';
 

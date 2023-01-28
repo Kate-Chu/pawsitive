@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
-import Card from 'src/components/Card';
-import theme from 'src/styles/base';
+import Card from '../../components/Card';
+import theme from '../../styles/base';
 import replaceImg from '../../assets/image replace.svg';
 
 const Favorites = () => {

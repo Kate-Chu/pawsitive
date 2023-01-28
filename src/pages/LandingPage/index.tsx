@@ -1,6 +1,6 @@
 import { styled } from '@linaria/react';
-import Carousal from 'src/components/Carousal';
-import theme from 'src/styles/base';
+import Carousal from '../../components/Carousal';
+import theme from '../../styles/base';
 import mapImage from '../../assets/taiwan.svg';
 
 const LandingPage = () => {

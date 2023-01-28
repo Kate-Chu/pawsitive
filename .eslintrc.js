@@ -1,13 +1,19 @@
 module.exports = {
   extends: [
     'react-app',
-    'react-app/jest',
     'airbnb',
     'plugin:prettier/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:testing-library/react',
+    'plugin:jest-dom/recommended',
     'prettier',
   ],
-  plugins: ['prettier', 'react-hooks'],
+  parserOptions: {
+    babelOptions: {
+      presets: [['babel-preset-react-app', false]],
+    },
+  },
+  plugins: ['prettier', 'react-hooks', 'testing-library', 'jest-dom'],
   settings: {
     'import/resolver': {
       typescript: {},

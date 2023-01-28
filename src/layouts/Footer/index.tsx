@@ -1,5 +1,5 @@
 import { styled } from '@linaria/react';
-import theme from 'src/styles/base';
+import theme from '../../styles/base';
 import { ReactComponent as Logo } from '../../assets/browser-icon.svg';
 
 const Footer = () => {

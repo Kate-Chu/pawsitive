@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { styled } from '@linaria/react';
-import theme from 'src/styles/base';
+import theme from '../../styles/base';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 const Header = () => {

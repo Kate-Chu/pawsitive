@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@linaria/react';
-import theme from 'src/styles/base';
+import theme from '../../styles/base';
 import moreIcon from '../../assets/more.svg';
 import replaceImage from '../../assets/image replace.svg';
 
@@ -26,12 +26,10 @@ const Card: React.FC<CardProps> = (props) => {
           </span>
         </AnimalInfo>
       </CardContainer>
-      {updateDate && (
-        <UpdatedDate>
-          <strong>更新日期</strong>
-          <span>{updateDate.replaceAll('/', '-')}</span>
-        </UpdatedDate>
-      )}
+      <UpdatedDate>
+        <strong>更新日期</strong>
+        <span>{updateDate ? updateDate.replaceAll('/', '-') : '未知'}</span>
+      </UpdatedDate>
     </AnimalData>
   );
 };
