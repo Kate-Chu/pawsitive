@@ -2,6 +2,7 @@
   "name": "pawsitive",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://githubkate-chu.github.io/pawsitive/#/home",
   "dependencies": {
     "@linaria/babel-preset": "^4.3.3",
     "@linaria/core": "^4.2.5",
@@ -16,6 +17,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "axios": "^1.2.5",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
@@ -32,7 +34,9 @@
     "lint:check": "eslint --ext=ts,tsx src/",
     "lint": "eslint --fix --ext=ts,tsx src/",
     "format:check": "prettier . --check --ignore-unknown",
-    "format": "prettier . --write --ignore-unknown"
+    "format": "prettier . --write --ignore-unknown",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [

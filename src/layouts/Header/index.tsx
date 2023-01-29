@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { styled } from '@linaria/react';
 import theme from '../../styles/base';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
@@ -12,7 +12,9 @@ const Header = () => {
   return (
     <AppHeader>
       <LogoContainer>
-        <Logo />
+        <Link to="/home">
+          <Logo />
+        </Link>
       </LogoContainer>
       <SidebarButton>
         <div>
@@ -98,6 +100,12 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   shrink: 0;
+
+  a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
 
   ${theme.mediaQuery.tabPort} {
     width: 38%;
