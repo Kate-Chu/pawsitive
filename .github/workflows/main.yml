@@ -17,15 +17,21 @@ jobs:
         node-version: [19.x]
 
     steps: 
-      - uses: actions/checkout@v2
+      - name: Checkout to the repository
+        uses: actions/checkout@v2
       
-      - name: Install
-        run: |
-          yarn install
+      - name: Install package dependencies
+        run: yarn install
+
+      - name: Test
+        run: yarn test
+
+      - name: Build
+        run: yarn run build
           
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           TOKEN: ${{ secrets.deploy_secret }}
           BRANCH: gh-pages
-          FOLDER: .
+          FOLDER: build

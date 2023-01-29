@@ -33,7 +33,7 @@
     "lint:check": "eslint --ext=ts,tsx src/",
     "lint": "eslint --fix --ext=ts,tsx src/",
     "format:check": "prettier . --check --ignore-unknown",
-    "format": "prettier . --write --ignore-unknown",
+    "format": "prettier . --write --ignore-unknown"
   },
   "browserslist": {
     "production": [
