@@ -19,7 +19,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       
-      - name: Install and build
+      - name: Install
         run: |
           yarn install
           
