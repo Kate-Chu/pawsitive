@@ -2,6 +2,7 @@
   "name": "pawsitive",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://githubkate-chu.github.io/pawsitive/#/home",
   "dependencies": {
     "@linaria/babel-preset": "^4.3.3",
     "@linaria/core": "^4.2.5",
