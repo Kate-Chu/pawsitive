@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pawsitive/static/css/main.35e98e12.css",
-    "main.js": "/pawsitive/static/js/main.4a5940d7.js",
+    "main.css": "/pawsitive/static/css/main.c2d47c8d.css",
+    "main.js": "/pawsitive/static/js/main.0c8c08cd.js",
     "static/media/logo.svg": "/pawsitive/static/media/logo.101476fcc5ad8970a84f960f061e39b6.svg",
     "static/media/image replace.svg": "/pawsitive/static/media/image replace.40fcf226098463263386d129a8ed0494.svg",
     "static/media/food-icon_2.svg": "/pawsitive/static/media/food-icon_2.3fe5decebf72e0050ce641d8c881eba8.svg",
@@ -14,11 +14,11 @@
     "static/media/top.svg": "/pawsitive/static/media/top.4c98bd6a90a9a715e2abb015dd62b098.svg",
     "static/media/arrow.svg": "/pawsitive/static/media/arrow.8afbd723693b54c016c2c2bbe4714bdc.svg",
     "static/media/more.svg": "/pawsitive/static/media/more.75d6299aa267f93fcc1657b185a71c55.svg",
-    "main.35e98e12.css.map": "/pawsitive/static/css/main.35e98e12.css.map",
-    "main.4a5940d7.js.map": "/pawsitive/static/js/main.4a5940d7.js.map"
+    "main.c2d47c8d.css.map": "/pawsitive/static/css/main.c2d47c8d.css.map",
+    "main.0c8c08cd.js.map": "/pawsitive/static/js/main.0c8c08cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.35e98e12.css",
-    "static/js/main.4a5940d7.js"
+    "static/css/main.c2d47c8d.css",
+    "static/js/main.0c8c08cd.js"
   ]
 }
