@@ -1,0 +1,28 @@
+name: deploy gh-pages
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  build:
+    name: Build and deploy gh-pages
+    env:
+      SECRET : ${{secrets.deploy_secret}}
+      PUBLISH: ./dist
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [19.x]
+
+    steps: 
+      - uses: actions/checkout@v2
+      
+      - name: Install and build
+        run: |
+          yarn install
+          
+      - name: Deploy
+        run: |
+          yarn deploy
