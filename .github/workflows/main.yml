@@ -10,7 +10,7 @@ jobs:
     name: Build and deploy gh-pages
     env:
       SECRET : ${{ secrets.deploy_secret }}
-      PUBLISH: ./dist
+      PUBLISH: ./build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,5 +24,8 @@ jobs:
           yarn install
           
       - name: Deploy
-        run: |
-          yarn deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          TOKEN: ${{ secrets.deploy_secret }}
+          BRANCH: gh-pages
+          FOLDER: .
