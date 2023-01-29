@@ -43,6 +43,7 @@ const ChangeImgButton = styled.button`
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 
   &.previous-btn {
     left: 5%;

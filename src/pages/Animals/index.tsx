@@ -13,7 +13,7 @@ import filterIcon from '../../assets/filter.svg';
 import topIcon from '../../assets/top.svg';
 
 const Animals = () => {
-  const [count, setCount] = useState(20);
+  const [count, setCount] = useState(40);
 
   const { data, isSuccess, isRefetching, refetch } = useQuery({
     queryKey: ['getAnimalData'],
@@ -45,7 +45,7 @@ const Animals = () => {
       </FilterBtnWrapper>
       <CardsContainer>
         {isSuccess ? (
-          data.data.map((item) => {
+          data.data.slice(0, count - 20).map((item) => {
             return (
               <Card
                 key={item.animal_id}

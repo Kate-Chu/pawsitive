@@ -64,9 +64,23 @@ const CardContainer = styled.section`
   width: 18rem;
   border-radius: 0.3rem;
   border: 2px solid ${theme.color.darkBlue};
-  box-shadow: 1.1rem 1.1rem 0 ${theme.color.orange};
   color: ${theme.color.darkBlue};
   background-color: ${theme.color.white};
+  position: relative;
+  z-index: auto;
+
+  ::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 1.1rem;
+    top: 1.1rem;
+    border: 2px solid ${theme.color.darkBlue};
+    border-radius: 0.3rem;
+    background-color: ${theme.color.orange};
+    z-index: -1;
 `;
 
 const AnimalImg = styled.img`
@@ -89,6 +103,7 @@ const AnimalInfo = styled.section`
 
   span {
     width: 1.5rem;
+    cursor: pointer;
   }
 `;
 

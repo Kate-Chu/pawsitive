@@ -1,9 +1,16 @@
+import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
+import { getAnimalData } from 'src/api/animals';
 import Carousal from '../../components/Carousal';
 import theme from '../../styles/base';
 import mapImage from '../../assets/taiwan.svg';
 
 const LandingPage = () => {
+  useQuery({
+    queryKey: ['getAnimalData'],
+    queryFn: () => getAnimalData(20),
+  });
+
   return (
     <LandingPageContainer>
       <Section>
