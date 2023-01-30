@@ -57,6 +57,18 @@ const globals = css`
     .white {
       color: ${theme.color.white};
     }
+
+    .w-80 {
+      width: 80%;
+    }
+
+    .w-20 {
+      width: 20%;
+    }
+
+    w-full {
+      width: 100%;
+    }
   }
 `;
 

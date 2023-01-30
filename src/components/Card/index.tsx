@@ -60,8 +60,8 @@ const AnimalData = styled.section`
 `;
 
 const CardContainer = styled.section`
-  height: 25rem;
-  width: 18rem;
+  height: 23rem;
+  width: 16rem;
   border-radius: 0.3rem;
   border: 2px solid ${theme.color.darkBlue};
   color: ${theme.color.darkBlue};
