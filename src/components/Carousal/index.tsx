@@ -5,33 +5,36 @@ import arrow from '../../assets/arrow.svg';
 
 const Carousal = () => {
   return (
-    <CarousalWrapper>
+    <S.CarousalWrapper>
       <img src={animalImage} alt="animal" />
-      <ChangeImgButton className="previous-btn">
+      <S.ChangeImgButton className="previous-btn">
         <img src={arrow} alt="previous" />
-      </ChangeImgButton>
-      <ChangeImgButton className="next-btn">
+      </S.ChangeImgButton>
+      <S.ChangeImgButton className="next-btn">
         <img src={arrow} alt="next" />
-      </ChangeImgButton>
-    </CarousalWrapper>
+      </S.ChangeImgButton>
+    </S.CarousalWrapper>
   );
 };
 
-const CarousalWrapper = styled.section`
-  display: flex;
-  position: relative;
-  width: 100%;
-  border: 2px solid ${theme.color.darkBlue};
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 1.5rem 1.5rem 0 ${theme.color.orange};
+export default Carousal;
 
-  ${theme.mediaQuery.tabLand} {
-    width: 80%;
-  }
-`;
+const S = {
+  CarousalWrapper: styled.section`
+    display: flex;
+    position: relative;
+    width: 100%;
+    border: 2px solid ${theme.color.darkBlue};
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1.5rem 1.5rem 0 ${theme.color.orange};
 
-const ChangeImgButton = styled.button`
+    ${theme.mediaQuery.tabLand} {
+      width: 80%;
+    }
+  `,
+
+  ChangeImgButton: styled.button`
   display:flex;
   justify-content:center;
   align-items:center;
@@ -57,6 +60,5 @@ const ChangeImgButton = styled.button`
   ${theme.mediaQuery.tabPort} {
      width: 2.2rem;
   }
-`;
-
-export default Carousal;
+`,
+};

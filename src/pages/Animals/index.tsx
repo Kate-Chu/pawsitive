@@ -37,14 +37,14 @@ const Animals = () => {
   };
 
   return (
-    <PageWrapper>
+    <S.PageWrapper>
       {showFilterBar && (
         <FilterBar className={showFilterBar ? 'w-20' : undefined} />
       )}
-      <AnimalsContainer className={showFilterBar ? 'w-80' : 'w-full'}>
-        <Title>所有動物</Title>
+      <S.AnimalsContainer className={showFilterBar ? 'w-80' : 'w-full'}>
+        <S.Title>所有動物</S.Title>
         {!showFilterBar && (
-          <FilterBtnWrapper>
+          <S.FilterBtnWrapper>
             <ButtonWithShadow
               className="darkBlue bg-white"
               onClick={() => setShowFilterBar((prev) => !prev)}
@@ -52,9 +52,9 @@ const Animals = () => {
               <img src={filterIcon} alt="filter button" />
               <span>篩選</span>
             </ButtonWithShadow>
-          </FilterBtnWrapper>
+          </S.FilterBtnWrapper>
         )}
-        <CardsContainer>
+        <S.CardsContainer>
           {isSuccess ? (
             data.data.slice(0, count - 20).map((item) => {
               return (
@@ -68,7 +68,7 @@ const Animals = () => {
               );
             })
           ) : (
-            <SpinnerWrapper>
+            <S.SpinnerWrapper>
               <ThreeDots
                 height="80"
                 width="80"
@@ -78,10 +78,10 @@ const Animals = () => {
                 wrapperStyle={{}}
                 visible
               />
-            </SpinnerWrapper>
+            </S.SpinnerWrapper>
           )}
           {isRefetching && (
-            <SpinnerWrapper>
+            <S.SpinnerWrapper>
               <ThreeDots
                 height="80"
                 width="80"
@@ -91,41 +91,42 @@ const Animals = () => {
                 wrapperStyle={{}}
                 visible
               />
-            </SpinnerWrapper>
+            </S.SpinnerWrapper>
           )}
-        </CardsContainer>
+        </S.CardsContainer>
         <ButtonWithShadow
           onClick={onClickFetchMore}
           className="bg-orange white"
         >
           顯示更多內容
         </ButtonWithShadow>
-        <TopBtnWrapper>
+        <S.TopBtnWrapper>
           <CircleButton onClick={onClickScrollToTop}>
             <img src={topIcon} alt="return top" />
           </CircleButton>
-        </TopBtnWrapper>
-      </AnimalsContainer>
-    </PageWrapper>
+        </S.TopBtnWrapper>
+      </S.AnimalsContainer>
+    </S.PageWrapper>
   );
 };
 
 export default Animals;
 
-const PageWrapper = styled.div`
-  display: flex;
-  padding: 1rem 3rem 8rem;
-`;
+const S = {
+  PageWrapper: styled.div`
+    display: flex;
+    padding: 1rem 3rem 8rem;
+  `,
 
-const AnimalsContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
+  AnimalsContainer: styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  `,
 
-const Title = styled.header`
+  Title: styled.header`
   align-self: flex-start;
   margin 1rem -1rem 1.5rem;
   ${theme.font.h6}
@@ -133,45 +134,46 @@ const Title = styled.header`
   ${theme.mediaQuery.tabLand} {
     display: none;
   }
-`;
+`,
 
-const FilterBtnWrapper = styled.div`
-  margin: 0 0 1.5rem;
-  align-self: flex-start;
-  width: 10rem;
-`;
+  FilterBtnWrapper: styled.div`
+    margin: 0 0 1.5rem;
+    align-self: flex-start;
+    width: 10rem;
+  `,
 
-const CardsContainer = styled.section`
-  margin: 0 0 2.5rem;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  flex-shrink: 1;
-`;
+  CardsContainer: styled.section`
+    margin: 0 0 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+  `,
 
-const SpinnerWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
+  SpinnerWrapper: styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  `,
 
-const TopBtnWrapper = styled.div`
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  TopBtnWrapper: styled.div`
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
 
-  ${theme.mediaQuery.tabPort} {
-    bottom: 4.5rem;
-    right: 4.5rem;
-  }
+    ${theme.mediaQuery.tabPort} {
+      bottom: 4.5rem;
+      right: 4.5rem;
+    }
 
-  ${theme.mediaQuery.tabLand} {
-    bottom: 5rem;
-    right: 5rem;
-  }
+    ${theme.mediaQuery.tabLand} {
+      bottom: 5rem;
+      right: 5rem;
+    }
 
-  ${theme.mediaQuery.bigDesk} {
-    bottom: 6rem;
-    right: 6rem;
-  }
-`;
+    ${theme.mediaQuery.bigDesk} {
+      bottom: 6rem;
+      right: 6rem;
+    }
+  `,
+};
