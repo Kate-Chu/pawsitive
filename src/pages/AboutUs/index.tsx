@@ -1,7 +1,6 @@
 import { styled } from '@linaria/react';
 import Board from '../../components/Board';
 import theme from '../../styles/base';
-import foodIcon from '../../assets/food-icon_2.svg';
 
 const AboutUs = () => {
   return (
@@ -28,12 +27,6 @@ const AboutUs = () => {
           exercitationem sit aliquam corrupti doloribus.
         </p>
       </Board>
-      <section>
-        <S.ImgContainer>
-          <S.Image src={foodIcon} alt="donate us" />
-        </S.ImgContainer>
-        {/* <S.CTX>愛心捐贈</S.CTX> */}
-      </section>
     </S.AboutUsContainer>
   );
 };
@@ -41,7 +34,7 @@ const AboutUs = () => {
 export default AboutUs;
 
 const S = {
-  AboutUsContainer: styled.section`
+  AboutUsContainer: styled.article`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,74 +62,5 @@ const S = {
     align-self: flex-start;
     margin-bottom: 1.5rem;
     ${theme.font.h3}
-  `,
-
-  ImgContainer: styled.button`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 10rem;
-    background-color: ${theme.color.darkBlue};
-    cursor: pointer;
-    transition: translate 0.1s ease-in-out;
-
-    &:hover {
-      translate: 0 -0.3rem;
-      filter: brightness(1.1);
-
-      &::before {
-        background-color: ${theme.color.orange};
-        filter: brightness(1.65);
-      }
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 99%;
-      height: 99%;
-      top: 0.5%;
-      left: 0.5%;
-      background-color: ${theme.color.white};
-    }
-
-    &,
-    &::before {
-      clip-path: polygon(
-        50% 0%,
-        63.23% 9.3%,
-        79.39% 9.55%,
-        84.62% 24.84%,
-        97.55% 34.55%,
-        92.8% 50%,
-        97.55% 65.45%,
-        84.62% 75.16%,
-        79.39% 90.45%,
-        63.23% 90.7%,
-        50% 100%,
-        36.77% 90.7%,
-        20.61% 90.45%,
-        15.38% 75.16%,
-        2.45% 65.45%,
-        7.2% 50%,
-        2.45% 34.55%,
-        15.38% 24.84%,
-        20.61% 9.55%,
-        36.77% 9.3%
-      );
-    }
-  `,
-
-  Image: styled.img`
-    width: 5rem;
-    z-index: 1;
-  `,
-
-  CTX: styled.h3`
-    margin: 1.4rem 0;
-    text-align: center;
   `,
 };

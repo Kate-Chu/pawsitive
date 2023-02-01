@@ -39,7 +39,10 @@ const Animals = () => {
   return (
     <S.PageWrapper>
       {showFilterBar && (
-        <FilterBar className={showFilterBar ? 'w-20' : undefined} />
+        <FilterBar
+          className={showFilterBar ? 'w-20' : undefined}
+          onClick={() => setShowFilterBar(false)}
+        />
       )}
       <S.AnimalsContainer className={showFilterBar ? 'w-80' : 'w-full'}>
         <S.Title>所有動物</S.Title>
@@ -47,7 +50,7 @@ const Animals = () => {
           <S.FilterBtnWrapper>
             <ButtonWithShadow
               className="darkBlue bg-white"
-              onClick={() => setShowFilterBar((prev) => !prev)}
+              onClick={() => setShowFilterBar(true)}
             >
               <img src={filterIcon} alt="filter button" />
               <span>篩選</span>
@@ -115,6 +118,7 @@ export default Animals;
 const S = {
   PageWrapper: styled.div`
     display: flex;
+    justify-content: center;
     padding: 1rem 3rem 8rem;
   `,
 

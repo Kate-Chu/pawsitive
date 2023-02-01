@@ -4,19 +4,26 @@ import { styled } from '@linaria/react';
 import ShadowedButton from '../ShadowedButton';
 import theme from '../../styles/base';
 import filterIcon from '../../assets/filter.svg';
+import { ReactComponent as CrossIcon } from '../../assets/cross.svg';
 
 type FilterBarProps = {
   className: string | undefined;
+  onClick: () => void;
 };
 
 const FilterBar: React.FC<FilterBarProps> = (props) => {
-  const { className } = props;
+  const { className, onClick } = props;
 
   return (
     <S.FilterBarWrapper className={className}>
       <S.FilterBarTop>
-        <img src={filterIcon} alt="filter" />
-        <span>篩選</span>
+        <section>
+          <img src={filterIcon} alt="filter" />
+          <span>篩選</span>
+        </section>
+        <button onClick={onClick}>
+          <CrossIcon fill={theme.color.darkBlue} />
+        </button>
       </S.FilterBarTop>
       <S.FilterBarBtnMain>
         <ShadowedButton className="bg-orange white">狗</ShadowedButton>
@@ -64,15 +71,30 @@ const S = {
   FilterBarTop: styled.header`
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
     padding: 1.6rem 0;
 
-    img {
-      width: 1.8rem;
+    section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 1.8rem;
+      }
+
+      span {
+        ${theme.font.h4}
+      }
     }
 
-    span {
-      ${theme.font.h4}
+    button {
+      width: 1.3rem;
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
   `,
 
