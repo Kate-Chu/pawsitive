@@ -9,7 +9,7 @@ const Favorites = () => {
     <S.FavoritesContainer>
       <S.Title>我的收藏</S.Title>
       <S.CardsContainer>
-        <Card name="神奇的物種" place="外星球" img={replaceImg} />
+        <Card name="神奇的物種" place="外星球" img={replaceImg} isFavorite />
         <S.CTA>
           還沒有收藏的動物唷...
           <br />

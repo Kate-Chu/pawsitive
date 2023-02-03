@@ -8,14 +8,16 @@ import ButtonWithShadow from '../../components/ShadowedButton';
 import Card from '../../components/Card';
 import CircleButton from '../../components/CircleButton';
 import FilterBar from '../../components/FilterBar';
+import useFavoriteStore from '../../store';
 import { getAnimalData } from '../../api/animals';
 import theme from '../../styles/base';
 import filterIcon from '../../assets/filter.svg';
-import topIcon from '../../assets/top.svg';
+import returnTopIcon from '../../assets/top.svg';
 
 const Animals = () => {
   const [count, setCount] = useState(40);
   const [showFilterBar, setShowFilterBar] = useState(false);
+  const favorites = useFavoriteStore((state) => state.favorite);
 
   const { data, isSuccess, isRefetching, refetch } = useQuery({
     queryKey: ['getAnimalData'],
@@ -63,10 +65,12 @@ const Animals = () => {
               return (
                 <Card
                   key={item.animal_id}
+                  id={item.animal_id}
                   img={item.album_file}
                   name={item.animal_Variety}
                   place={item.animal_place.slice(0, 3)}
                   updateDate={item.animal_update}
+                  isFavorite={favorites.includes(item.animal_id)}
                 />
               );
             })
@@ -105,7 +109,7 @@ const Animals = () => {
         </ButtonWithShadow>
         <S.TopBtnWrapper>
           <CircleButton onClick={onClickScrollToTop}>
-            <img src={topIcon} alt="return top" />
+            <img src={returnTopIcon} alt="return top" />
           </CircleButton>
         </S.TopBtnWrapper>
       </S.AnimalsContainer>
