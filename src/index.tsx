@@ -4,7 +4,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import About from './pages/AboutUs';
 import Animals from './pages/Animals';
 import Favorites from './pages/Favorites';
-import LandingPage from './pages/LandingPage';
+import LandingPage from './pages/Homepage';
 import Layout from './layouts/Layout';
 import Tutorial from './pages/Tutorial';
 

@@ -4,11 +4,14 @@ import { css } from '@linaria/core';
 import theme from '../styles/base';
 import Header from './Header';
 import Footer from './Footer';
+import useFavoriteStore from '../store';
 // import Sidebar from './Sidebar';
 
 const queryClient = new QueryClient();
 
 const Layout = () => {
+  const initializeFav = useFavoriteStore((state) => state.initialize);
+  initializeFav();
   return (
     <div className={globals}>
       <Header />

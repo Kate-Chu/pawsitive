@@ -16,6 +16,7 @@ type FavoriteItemType = {
 
 interface FavoriteStateType {
   favorite: FavoriteItemType[];
+  initialize: () => void;
   add: (item: FavoriteItemType) => void;
   remove: (id: number) => void;
 }
@@ -23,12 +24,25 @@ interface FavoriteStateType {
 const useFavoriteStore = create<FavoriteStateType>((set) => ({
   favorite: [],
 
-  add: (item) => set((state) => ({ favorite: [...state.favorite, item] })),
+  initialize: () =>
+    set(() => {
+      const fav = JSON.parse(localStorage.getItem('favorite') || '[]');
+      return { favorite: fav };
+    }),
+
+  add: (item) =>
+    set((state) => {
+      const fav = [...state.favorite, item];
+      localStorage.setItem('favorite', JSON.stringify(fav));
+      return { favorite: fav };
+    }),
 
   remove: (id) =>
-    set((state) => ({
-      favorite: state.favorite.filter((fav) => fav.id !== id),
-    })),
+    set((state) => {
+      const newFav = state.favorite.filter((fav) => fav.id !== id);
+      localStorage.setItem('favorite', JSON.stringify(newFav));
+      return { favorite: newFav };
+    }),
 }));
 
 export default useFavoriteStore;

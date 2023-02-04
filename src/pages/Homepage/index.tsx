@@ -2,17 +2,18 @@ import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
 import { getAnimalData } from 'src/api/animals';
 import Carousal from '../../components/Carousal';
+// import useFavoriteStore from '../../store';
 import theme from '../../styles/base';
 import mapImage from '../../assets/taiwan.svg';
 
-const LandingPage = () => {
+const Homepage = () => {
   useQuery({
     queryKey: ['getAnimalData'],
     queryFn: () => getAnimalData(20),
   });
 
   return (
-    <S.LandingPageContainer>
+    <S.HomepageContainer>
       <S.Section>
         <S.Description>
           <h1>為你尋找最適合的牠</h1>
@@ -38,14 +39,14 @@ const LandingPage = () => {
           <p>動物收容中心: 132</p>
         </S.Description>
       </S.Section>
-    </S.LandingPageContainer>
+    </S.HomepageContainer>
   );
 };
 
-export default LandingPage;
+export default Homepage;
 
 const S = {
-  LandingPageContainer: styled.section`
+  HomepageContainer: styled.section`
     padding: 1rem;
     width: 100%;
 
