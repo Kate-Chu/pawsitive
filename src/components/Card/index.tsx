@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled } from '@linaria/react';
 
 import useFavoriteStore from '../../store';
@@ -7,27 +7,57 @@ import moreIcon from '../../assets/more.svg';
 import replaceImage from '../../assets/image replace.svg';
 import likeIcon from '../../assets/like.svg';
 import unlikeIcon from '../../assets/unlike.svg';
+import { ReactComponent as CrossIcon } from '../../assets/cross.svg';
 
 type CardProps = {
-  id?: number;
+  id: number;
   img: string;
   name: string;
   place: string;
-  updateDate?: string;
+  sex: string;
+  phone: string;
+  variety: string;
+  remark: string;
+  shelter: string;
+  updateDate: string;
   isFavorite?: boolean;
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { id, img, name, place, updateDate, isFavorite } = props;
+  const {
+    id,
+    img,
+    name,
+    place,
+    sex,
+    phone,
+    variety,
+    remark,
+    shelter,
+    updateDate,
+    isFavorite,
+  } = props;
+  const [showFront, setShowFront] = useState(true);
   const addFav = useFavoriteStore((state) => state.add);
   const removeFav = useFavoriteStore((state) => state.remove);
 
-  const handleHeartClick = () => {
+  const onClickHeart = () => {
     if (id) {
       if (isFavorite) {
         removeFav(id);
       } else {
-        addFav(id);
+        addFav({
+          id,
+          img,
+          name,
+          place,
+          sex,
+          phone,
+          variety,
+          remark,
+          shelter,
+          updateDate,
+        });
       }
     }
   };
@@ -35,17 +65,51 @@ const Card: React.FC<CardProps> = (props) => {
   return (
     <S.AnimalData>
       <S.CardContainer>
-        <S.AnimalImg src={img.length ? img : replaceImage} alt="animal" />
-        <S.HeartButton onClick={handleHeartClick}>
-          <img src={isFavorite ? likeIcon : unlikeIcon} alt="favorite icon" />
-        </S.HeartButton>
-        <S.AnimalName>{name}</S.AnimalName>
-        <S.AnimalInfo>
-          <p>{place}</p>
-          <span>
-            <img src={moreIcon} alt="more info" />
-          </span>
-        </S.AnimalInfo>
+        {showFront ? (
+          <S.CardFront>
+            <S.AnimalImg src={img.length ? img : replaceImage} alt="animal" />
+            <S.HeartButton onClick={onClickHeart}>
+              <img
+                src={isFavorite ? likeIcon : unlikeIcon}
+                alt="favorite icon"
+              />
+            </S.HeartButton>
+            <S.AnimalName>{name}</S.AnimalName>
+            <S.AnimalInfo>
+              <p>{place}</p>
+              <button onClick={() => setShowFront(false)}>
+                <img src={moreIcon} alt="more info" />
+              </button>
+            </S.AnimalInfo>
+          </S.CardFront>
+        ) : (
+          <S.CardBack>
+            <S.CardBackTop>
+              <button onClick={() => setShowFront(true)}>
+                <CrossIcon fill={theme.color.darkBlue} />
+              </button>
+            </S.CardBackTop>
+            <S.CardBackBody>
+              <h6>{shelter}</h6>
+              <p>
+                <strong>電話</strong>
+                {phone}
+              </p>
+              <p>
+                <strong>種類</strong>
+                {variety}
+              </p>
+              <p>
+                <strong>性別</strong>
+                {sex === 'M' ? '公' : '母'}
+              </p>
+              <p>
+                <strong>備註</strong>
+                {remark}
+              </p>
+            </S.CardBackBody>
+          </S.CardBack>
+        )}
       </S.CardContainer>
       <S.UpdatedDate>
         <strong>更新日期</strong>
@@ -82,28 +146,95 @@ const S = {
   `,
 
   CardContainer: styled.section`
-  height: 23rem;
-  width: 16rem;
-  border-radius: 0.3rem;
-  border: 2px solid ${theme.color.darkBlue};
-  color: ${theme.color.darkBlue};
-  background-color: ${theme.color.white};
-  position: relative;
-  z-index: auto;
+    height: 23rem;
+    width: 16rem;
+    border-radius: 0.3rem;
+    border: 2px solid ${theme.color.darkBlue};
+    color: ${theme.color.darkBlue};
+    background-color: ${theme.color.white};
+    position: relative;
+    z-index: auto;
+  `,
 
-  ::after {
-    content: '';
-    display: inline-block;
+  CardFront: styled.section`
     width: 100%;
     height: 100%;
-    position: absolute;
-    left: 1.1rem;
-    top: 1.1rem;
-    border: 2px solid ${theme.color.darkBlue};
-    border-radius: 0.3rem;
+
+    ::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 1.1rem;
+      top: 1.1rem;
+      border: 2px solid ${theme.color.darkBlue};
+      border-radius: 0.3rem;
+      background-color: ${theme.color.orange};
+      z-index: -1;
+    }
+  `,
+
+  CardBack: styled.section`
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 1.2rem;
+    height: 100%;
     background-color: ${theme.color.orange};
-    z-index: -1;
-`,
+
+    ::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 1.1rem;
+      top: 1.1rem;
+      border: 2px solid ${theme.color.darkBlue};
+      border-radius: 0.3rem;
+      background-color: ${theme.color.darkCyan};
+      z-index: -1;
+    }
+  `,
+
+  CardBackTop: styled.section`
+    height: 15%;
+    display: flex;
+    align-self: flex-end;
+
+    button {
+      display: inline-block;
+      border: none;
+      background-color: transparent;
+      width: 1.5rem;
+      height: 1.5rem;
+      cursor: pointer;
+    }
+  `,
+
+  CardBackBody: styled.section`
+    background-color: ${theme.color.white};
+    height: 90%;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    line-height: 2;
+
+    h6 {
+      display: flex;
+      justify-content: center;
+      ${theme.font.h5};
+    }
+
+    p {
+      ${theme.font.p}
+      font-weight: 500;
+    }
+
+    strong {
+      font-weight: 700;
+      margin-right: 1rem;
+    }
+  `,
 
   AnimalImg: styled.img`
     height: 75%;
@@ -124,7 +255,7 @@ const S = {
   `,
 
   AnimalName: styled.h6`
-    margin: 1rem 1rem 0;
+    margin: 0.6rem 1rem 0;
     ${theme.font.h6}
   `,
 
@@ -132,12 +263,14 @@ const S = {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1rem 1rem;
+    margin: 0 1rem 1.2rem;
     ${theme.font.p}
 
-    span {
-      width: 1.5rem;
+    button {
+      width: 1.7rem;
       cursor: pointer;
+      border: none;
+      background-color: transparent;
     }
   `,
 
