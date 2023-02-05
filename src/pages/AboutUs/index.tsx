@@ -40,6 +40,7 @@ const S = {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 80vh;
     padding: 0 3rem;
 
     ${theme.mediaQuery.desk} {

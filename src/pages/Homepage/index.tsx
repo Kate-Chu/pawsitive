@@ -4,7 +4,7 @@ import { styled } from '@linaria/react';
 import { getAnimalData } from '../../api/animals';
 import Carousal from '../../components/Carousal';
 import theme from '../../styles/base';
-import mapImage from '../../assets/taiwan.svg';
+import { ReactComponent as TaiwanMap } from '../../assets/tw.svg';
 
 const Homepage = () => {
   const { data, isSuccess } = useQuery({
@@ -33,7 +33,7 @@ const Homepage = () => {
       </S.FeatureSection>
       <S.MapSection>
         <S.MapContainer>
-          <img src={mapImage} alt="Taiwan map" />
+          <TaiwanMap />
         </S.MapContainer>
         <S.Description>
           <h2>台北市</h2>
@@ -149,6 +149,15 @@ const S = {
 
     ${theme.mediaQuery.tabLand} {
       padding: 2rem;
+    }
+
+    path {
+      fill: ${theme.color.orange};
+      cursor: pointer;
+
+      :hover {
+        fill: ${theme.color.darkCyan};
+      }
     }
   `,
 };
