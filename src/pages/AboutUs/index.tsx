@@ -55,8 +55,8 @@ const AboutUs = () => {
             <strong>HsiaoJu</strong>
           </a>
           <br />
-          網站會持續（緩慢）地更新，如果有任何 bug 或是建議，都歡迎發 PR
-          或者留言告訴我
+          網站會持續（緩慢）地更新，如果有任何 bug 或是建議，都歡迎留言或者發 PR
+          告訴我
           <a
             target="_blank"
             rel="noreferrer"
