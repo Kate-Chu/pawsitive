@@ -1,20 +1,23 @@
 import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
-import { getAnimalData } from 'src/api/animals';
+
+import { getAnimalData } from '../../api/animals';
 import Carousal from '../../components/Carousal';
-// import useFavoriteStore from '../../store';
 import theme from '../../styles/base';
 import mapImage from '../../assets/taiwan.svg';
 
 const Homepage = () => {
-  useQuery({
+  const { data, isSuccess } = useQuery({
     queryKey: ['getAnimalData'],
     queryFn: () => getAnimalData(20),
   });
+  if (isSuccess) {
+    console.log(data.data);
+  }
 
   return (
     <S.HomepageContainer>
-      <S.Section>
+      <S.FeatureSection>
         <S.Description>
           <h1>為你尋找最適合的牠</h1>
           <h4>24 小時線上查看</h4>
@@ -27,8 +30,8 @@ const Homepage = () => {
         <S.CarousalSection>
           <Carousal />
         </S.CarousalSection>
-      </S.Section>
-      <S.Section>
+      </S.FeatureSection>
+      <S.MapSection>
         <S.MapContainer>
           <img src={mapImage} alt="Taiwan map" />
         </S.MapContainer>
@@ -38,7 +41,7 @@ const Homepage = () => {
           <p>動物保護教育園區: 8888</p>
           <p>動物收容中心: 132</p>
         </S.Description>
-      </S.Section>
+      </S.MapSection>
     </S.HomepageContainer>
   );
 };
@@ -47,23 +50,31 @@ export default Homepage;
 
 const S = {
   HomepageContainer: styled.section`
-    padding: 1rem;
+    padding: 2rem 1rem 1rem;
     width: 100%;
+
+    ${theme.mediaQuery.tabPort} {
+      padding-top: 3rem;
+    }
 
     ${theme.mediaQuery.tabLand} {
       padding: 2rem 5rem 3rem;
     }
   `,
 
-  Section: styled.section`
+  FeatureSection: styled.section`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
-    gap: 1rem;
+    gap: 2rem;
+
+    ${theme.mediaQuery.tabPort} {
+      gap: 4rem;
+    }
 
     ${theme.mediaQuery.tabLand} {
+      margin-bottom: 4rem;
       flex-direction: row;
       gap: 5rem;
     }
@@ -103,7 +114,33 @@ const S = {
   CarousalSection: styled.section`
     display: flex;
     justify-content: center;
-    width: 60%;
+    flex-shrink: 0;
+    height: 18rem;
+    width: 18rem;
+
+    ${theme.mediaQuery.tabPort} {
+      height: 30rem;
+      width: 30rem;
+    }
+
+    ${theme.mediaQuery.tabLand} {
+      height: 30rem;
+      width: 35rem;
+    }
+  `,
+
+  MapSection: styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    ${theme.mediaQuery.tabLand} {
+      margin-bottom: 4rem;
+      flex-direction: row;
+      gap: 5rem;
+    }
   `,
 
   MapContainer: styled.div`
