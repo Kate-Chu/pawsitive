@@ -1,7 +1,19 @@
 {
   "files": {
-    "main.css": "/pawsitive/static/css/main.08f41e20.css",
-    "main.js": "/pawsitive/static/js/main.46b65511.js",
+    "main.css": "/pawsitive/static/css/main.61caf0a6.css",
+    "main.js": "/pawsitive/static/js/main.14665101.js",
+    "static/media/cat-1-1024.jpg": "/pawsitive/static/media/cat-1-1024.4fd24581f9d7cb91c761.jpg",
+    "static/media/dog-2-1024.jpg": "/pawsitive/static/media/dog-2-1024.8878bf9f4e8f60f2bf55.jpg",
+    "static/media/cat-2-1024.jpg": "/pawsitive/static/media/cat-2-1024.1922a9a8b16e571a46ef.jpg",
+    "static/media/dog-1-1024.jpg": "/pawsitive/static/media/dog-1-1024.d5619ecb7ded84487ab5.jpg",
+    "static/media/cat-1-768.jpg": "/pawsitive/static/media/cat-1-768.7008d13b3a8ff1f0d858.jpg",
+    "static/media/cat-2-768.jpg": "/pawsitive/static/media/cat-2-768.daf38fb50acc389c99b8.jpg",
+    "static/media/dog-2-768.jpg": "/pawsitive/static/media/dog-2-768.d69e666e1971af40ba05.jpg",
+    "static/media/dog-1-768.jpg": "/pawsitive/static/media/dog-1-768.a3f3ce8b89065ab32638.jpg",
+    "static/media/cat-1-640.jpg": "/pawsitive/static/media/cat-1-640.c166b206494e86880005.jpg",
+    "static/media/cat-2-640.jpg": "/pawsitive/static/media/cat-2-640.6ac217b52552451f1eb6.jpg",
+    "static/media/dog-2-640.jpg": "/pawsitive/static/media/dog-2-640.9ddf4d24ff3cbf25e24e.jpg",
+    "static/media/dog-1-640.jpg": "/pawsitive/static/media/dog-1-640.eab0a5ff966339d70f84.jpg",
     "static/media/logo.svg": "/pawsitive/static/media/logo.101476fcc5ad8970a84f960f061e39b6.svg",
     "static/media/image replace.svg": "/pawsitive/static/media/image replace.40fcf226098463263386d129a8ed0494.svg",
     "static/media/food-icon_2.svg": "/pawsitive/static/media/food-icon_2.3fe5decebf72e0050ce641d8c881eba8.svg",
@@ -17,11 +29,11 @@
     "static/media/like.svg": "/pawsitive/static/media/like.620f5d6dc1f98b0df7d609e46b7131d9.svg",
     "static/media/unlike.svg": "/pawsitive/static/media/unlike.f57a32537d5e4a4c4636111082edaa59.svg",
     "static/media/more.svg": "/pawsitive/static/media/more.75d6299aa267f93fcc1657b185a71c55.svg",
-    "main.08f41e20.css.map": "/pawsitive/static/css/main.08f41e20.css.map",
-    "main.46b65511.js.map": "/pawsitive/static/js/main.46b65511.js.map"
+    "main.61caf0a6.css.map": "/pawsitive/static/css/main.61caf0a6.css.map",
+    "main.14665101.js.map": "/pawsitive/static/js/main.14665101.js.map"
   },
   "entrypoints": [
-    "static/css/main.08f41e20.css",
-    "static/js/main.46b65511.js"
+    "static/css/main.61caf0a6.css",
+    "static/js/main.14665101.js"
   ]
 }
