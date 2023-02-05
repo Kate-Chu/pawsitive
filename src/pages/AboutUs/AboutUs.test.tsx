@@ -3,6 +3,6 @@ import AboutUs from '.';
 
 test('render AboutUs page', () => {
   render(<AboutUs />);
-  const subTitle = screen.getByText('我們的使命');
+  const subTitle = screen.getByText('HsiaoJu');
   expect(subTitle).toBeInTheDocument();
 });
