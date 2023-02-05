@@ -1,40 +1,18 @@
-import { useState } from 'react';
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
 
-import ButtonWithShadow from '../../components/ShadowedButton';
 import Card from '../../components/Card';
-import FilterBar from '../../components/FilterBar';
 import theme from '../../styles/base';
 import useFavoriteStore from '../../store/favoriteStore';
 import replaceImg from '../../assets/image replace.svg';
-import filterIcon from '../../assets/filter.svg';
 
 const Favorites = () => {
-  const [showFilterBar, setShowFilterBar] = useState(false);
   const favorite = useFavoriteStore((state) => state.favorite);
 
   return (
     <S.PageWrapper>
-      {showFilterBar && (
-        <FilterBar
-          className={showFilterBar ? 'w-20' : undefined}
-          onClick={() => setShowFilterBar(false)}
-        />
-      )}
-      <S.FavoritesContainer className={showFilterBar ? 'w-80' : 'w-full'}>
+      <S.FavoritesContainer className="w-full">
         <S.Title>我的收藏</S.Title>
-        {!showFilterBar && (
-          <S.FilterBtnWrapper>
-            <ButtonWithShadow
-              className="darkBlue bg-white"
-              onClick={() => setShowFilterBar(true)}
-            >
-              <img src={filterIcon} alt="filter button" />
-              <span>篩選</span>
-            </ButtonWithShadow>
-          </S.FilterBtnWrapper>
-        )}
         {favorite.length ? (
           <S.CardsContainer>
             {favorite.map((item) => {

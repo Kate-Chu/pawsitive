@@ -7,16 +7,13 @@ import { ThreeDots } from 'react-loader-spinner';
 import ButtonWithShadow from '../../components/ShadowedButton';
 import Card from '../../components/Card';
 import CircleButton from '../../components/CircleButton';
-import FilterBar from '../../components/FilterBar';
 import useFavoriteStore from '../../store/favoriteStore';
 import theme from '../../styles/base';
-import filterIcon from '../../assets/filter.svg';
 import returnTopIcon from '../../assets/top.svg';
 import { getAnimalData } from '../../api/animals';
 
 const Animals = () => {
   const [count, setCount] = useState(40);
-  const [showFilterBar, setShowFilterBar] = useState(false);
   const favorites = useFavoriteStore((state) => state.favorite);
 
   const { data, isSuccess, isRefetching, refetch } = useQuery({
@@ -40,25 +37,8 @@ const Animals = () => {
 
   return (
     <S.PageWrapper>
-      {showFilterBar && (
-        <FilterBar
-          className={showFilterBar ? 'w-20' : undefined}
-          onClick={() => setShowFilterBar(false)}
-        />
-      )}
-      <S.AnimalsContainer className={showFilterBar ? 'w-80' : 'w-full'}>
+      <S.AnimalsContainer className="w-full">
         <S.Title>所有動物</S.Title>
-        {!showFilterBar && (
-          <S.FilterBtnWrapper>
-            <ButtonWithShadow
-              className="darkBlue bg-white"
-              onClick={() => setShowFilterBar(true)}
-            >
-              <img src={filterIcon} alt="filter button" />
-              <span>篩選</span>
-            </ButtonWithShadow>
-          </S.FilterBtnWrapper>
-        )}
         <S.CardsContainer>
           {isSuccess ? (
             data.data.slice(0, count - 20).map((item) => {
