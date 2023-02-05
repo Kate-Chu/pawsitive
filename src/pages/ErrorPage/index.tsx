@@ -15,11 +15,11 @@ const ErrorPage = () => {
 
   setInterval(() => {
     setSecond((prev) => Math.max(0, prev - 1));
-
-    if (second === 0) {
-      navigate('/home');
-    }
   }, 1000);
+
+  setTimeout(() => {
+    navigate('/home');
+  }, 3000);
 
   return (
     <S.ErrorPageContainer>

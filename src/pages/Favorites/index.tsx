@@ -22,7 +22,7 @@ const Favorites = () => {
           onClick={() => setShowFilterBar(false)}
         />
       )}
-      <S.FavoritesContainer>
+      <S.FavoritesContainer className={showFilterBar ? 'w-80' : 'w-full'}>
         <S.Title>我的收藏</S.Title>
         {!showFilterBar && (
           <S.FilterBtnWrapper>
@@ -95,15 +95,22 @@ const S = {
   `,
 
   FavoritesContainer: styled.section`
-    width: 100%;
-    margin-left: -1rem;
-    padding: 1rem 3rem 8rem;
-
-    ${theme.mediaQuery.desk} {
-      margin-left: 0rem;
-      padding: 0 2rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   `,
+
+  Title: styled.header`
+  align-self: flex-start;
+  margin 1rem -1rem 1.5rem;
+  ${theme.font.h6}
+  
+  ${theme.mediaQuery.tabLand} {
+    display: none;
+  }
+`,
 
   FilterBtnWrapper: styled.div`
     margin: 0 0 1.5rem;
@@ -132,16 +139,6 @@ const S = {
       height: 87vh;
     }
   `,
-
-  Title: styled.header`
-  align-self: flex-start;
-  margin 1rem -1rem 1.5rem;
-  ${theme.font.h6}
-  
-  ${theme.mediaQuery.tabLand} {
-    display: none;
-  }
-`,
 
   CTA: styled.section`
     margin: 2rem 0;

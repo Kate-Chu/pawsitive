@@ -159,11 +159,11 @@ const S = {
   `,
 
   CardsContainer: styled.section`
-    margin: 0 0 2.5rem;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: flex-start;
     flex-shrink: 1;
+    margin: 0 0 2.5rem;
   `,
 
   SpinnerWrapper: styled.div`
