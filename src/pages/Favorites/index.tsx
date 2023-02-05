@@ -121,7 +121,7 @@ const S = {
   CardsContainer: styled.section`
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-shrink: 1;
     margin: 0 0 2.5rem;
   `,

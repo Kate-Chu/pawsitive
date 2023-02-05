@@ -11,14 +11,10 @@ import { ReactComponent as TaiwanMap } from '../../assets/tw.svg';
 const Homepage = () => {
   const [selectCity, setSelectCity] = useState<string>('taipei_city');
 
-  const { data: animalData, isSuccess: isAnimalSuccess } = useQuery({
+  useQuery({
     queryKey: ['getNewestData'],
     queryFn: () => getAnimalData(20),
   });
-
-  if (isAnimalSuccess) {
-    console.log('animalData', animalData.data);
-  }
 
   const onHover = () => {
     const paths = document.querySelectorAll('path');
@@ -74,7 +70,7 @@ const Homepage = () => {
         </S.MapContainer>
         <S.Description>
           <h2>{placeData.get(selectCity).place}</h2>
-          {shelters.length && shelters.map((item) => <p>{item}</p>)}
+          {shelters.length && shelters.map((item) => <p key={item}>{item}</p>)}
         </S.Description>
       </S.MapSection>
     </S.HomepageContainer>
