@@ -7,6 +7,7 @@ type FavoriteItemType = {
   name: string;
   place: string;
   sex: string;
+  status: string;
   phone: string;
   variety: string;
   remark: string;

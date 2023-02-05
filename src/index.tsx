@@ -7,6 +7,7 @@ import Favorites from './pages/Favorites';
 import LandingPage from './pages/Homepage';
 import Layout from './layouts/Layout';
 import Tutorial from './pages/Tutorial';
+import ErrorPage from './pages/ErrorPage';
 
 window.React = React;
 
@@ -21,6 +22,7 @@ const router = createHashRouter([
       { path: 'about-us', element: <About /> },
       { path: 'tutorial', element: <Tutorial /> },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 

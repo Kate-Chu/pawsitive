@@ -71,6 +71,7 @@ const Animals = () => {
                   place={item.animal_place.slice(0, 3)}
                   updateDate={item.animal_update}
                   sex={item.animal_sex}
+                  status={item.animal_status}
                   phone={item.shelter_tel}
                   variety={item.animal_Variety}
                   remark={item.animal_remark}

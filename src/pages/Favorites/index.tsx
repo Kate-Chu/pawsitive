@@ -45,6 +45,7 @@ const Favorites = () => {
                   img={item.img}
                   name={item.name}
                   sex={item.sex}
+                  status={item.status}
                   phone={item.phone}
                   variety={item.variety}
                   remark={item.remark}
@@ -64,6 +65,7 @@ const Favorites = () => {
               place="外星球"
               img={replaceImg}
               sex="友善的性別"
+              status="神秘的狀態"
               phone="00-1234-5678"
               variety="SSR"
               remark="柴氣降臨，貓肥家潤，帶我回家"

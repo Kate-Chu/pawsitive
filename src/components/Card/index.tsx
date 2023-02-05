@@ -15,12 +15,39 @@ type CardProps = {
   name: string;
   place: string;
   sex: string;
+  status: string;
   phone: string;
   variety: string;
   remark: string;
   shelter: string;
   updateDate: string;
   isFavorite?: boolean;
+};
+
+const getSex = (str: string) => {
+  switch (str) {
+    case 'M':
+      return '公';
+    case 'F':
+      return '母';
+    default:
+      return '未知';
+  }
+};
+
+const getStatus = (str: string) => {
+  switch (str) {
+    case 'NONE':
+      return '未公告';
+    case 'OPEN':
+      return '開放認養';
+    case 'ADOPTED':
+      return '已認養';
+    case 'DEAD':
+      return '死亡';
+    default:
+      return '其他';
+  }
 };
 
 const Card: React.FC<CardProps> = (props) => {
@@ -30,6 +57,7 @@ const Card: React.FC<CardProps> = (props) => {
     name,
     place,
     sex,
+    status,
     phone,
     variety,
     remark,
@@ -52,6 +80,7 @@ const Card: React.FC<CardProps> = (props) => {
           name,
           place,
           sex,
+          status,
           phone,
           variety,
           remark,
@@ -101,7 +130,11 @@ const Card: React.FC<CardProps> = (props) => {
               </p>
               <p>
                 <strong>性別</strong>
-                {sex === 'M' ? '公' : '母'}
+                {getSex(sex)}
+              </p>
+              <p>
+                <strong>狀態</strong>
+                {getStatus(status)}
               </p>
               <p>
                 <strong>備註</strong>
