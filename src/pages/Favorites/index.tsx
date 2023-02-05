@@ -6,7 +6,7 @@ import ButtonWithShadow from '../../components/ShadowedButton';
 import Card from '../../components/Card';
 import FilterBar from '../../components/FilterBar';
 import theme from '../../styles/base';
-import useFavoriteStore from '../../store';
+import useFavoriteStore from '../../store/favoriteStore';
 import replaceImg from '../../assets/image replace.svg';
 import filterIcon from '../../assets/filter.svg';
 

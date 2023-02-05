@@ -4,7 +4,7 @@ import { css } from '@linaria/core';
 import theme from '../styles/base';
 import Header from './Header';
 import Footer from './Footer';
-import useFavoriteStore from '../store';
+import useFavoriteStore from '../store/favoriteStore';
 // import Sidebar from './Sidebar';
 
 const queryClient = new QueryClient();

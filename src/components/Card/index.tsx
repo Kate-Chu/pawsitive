@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from '@linaria/react';
 
-import useFavoriteStore from '../../store';
+import useFavoriteStore from '../../store/favoriteStore';
 import theme from '../../styles/base';
 import moreIcon from '../../assets/more.svg';
 import replaceImage from '../../assets/image replace.svg';

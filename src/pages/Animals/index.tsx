@@ -8,7 +8,7 @@ import ButtonWithShadow from '../../components/ShadowedButton';
 import Card from '../../components/Card';
 import CircleButton from '../../components/CircleButton';
 import FilterBar from '../../components/FilterBar';
-import useFavoriteStore from '../../store';
+import useFavoriteStore from '../../store/favoriteStore';
 import theme from '../../styles/base';
 import filterIcon from '../../assets/filter.svg';
 import returnTopIcon from '../../assets/top.svg';
@@ -20,7 +20,7 @@ const Animals = () => {
   const favorites = useFavoriteStore((state) => state.favorite);
 
   const { data, isSuccess, isRefetching, refetch } = useQuery({
-    queryKey: ['getAnimalData'],
+    queryKey: ['getNewestData'],
     queryFn: () => getAnimalData(count),
   });
 

@@ -1,19 +1,50 @@
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
 
-import { getAnimalData } from '../../api/animals';
 import Carousal from '../../components/Carousal';
 import theme from '../../styles/base';
+import placeData from './data';
+import { getAnimalData } from '../../api/animals';
 import { ReactComponent as TaiwanMap } from '../../assets/tw.svg';
 
 const Homepage = () => {
-  const { data, isSuccess } = useQuery({
-    queryKey: ['getAnimalData'],
+  const [selectCity, setSelectCity] = useState<string>('taipei_city');
+
+  const { data: animalData, isSuccess: isAnimalSuccess } = useQuery({
+    queryKey: ['getNewestData'],
     queryFn: () => getAnimalData(20),
   });
-  if (isSuccess) {
-    console.log(data.data);
+
+  if (isAnimalSuccess) {
+    console.log('animalData', animalData.data);
   }
+
+  const onHover = () => {
+    const paths = document.querySelectorAll('path');
+    paths.forEach((path) => {
+      path.addEventListener('mouseenter', () => {
+        const tagname = path.getAttribute('data-name');
+        if (tagname) {
+          setSelectCity(tagname);
+        }
+      });
+    });
+  };
+
+  const mouseOutHandler = () => {
+    const paths = document.querySelectorAll('path');
+    paths.forEach((path) => {
+      path.removeEventListener('mouseenter', () => {
+        const tagname = path.getAttribute('data-name');
+        if (tagname) {
+          setSelectCity(tagname);
+        }
+      });
+    });
+  };
+
+  const shelters = Object.keys(placeData.get(selectCity).shelters);
 
   return (
     <S.HomepageContainer>
@@ -33,13 +64,11 @@ const Homepage = () => {
       </S.FeatureSection>
       <S.MapSection>
         <S.MapContainer>
-          <TaiwanMap />
+          <TaiwanMap onMouseEnter={onHover} onMouseOut={mouseOutHandler} />
         </S.MapContainer>
         <S.Description>
-          <h2>台北市</h2>
-          <p>動物之家: 222</p>
-          <p>動物保護教育園區: 8888</p>
-          <p>動物收容中心: 132</p>
+          <h2>{placeData.get(selectCity).place}</h2>
+          {shelters.length && shelters.map((item) => <p>{item}</p>)}
         </S.Description>
       </S.MapSection>
     </S.HomepageContainer>
@@ -144,14 +173,16 @@ const S = {
   `,
 
   MapContainer: styled.div`
-    width: 25rem;
-    padding: 2rem 4rem;
+    width: 100%;
+    padding: 2rem;
 
     ${theme.mediaQuery.tabLand} {
-      padding: 2rem;
+      padding: 2rem 4rem;
+      width: 50%;
     }
 
     path {
+      stroke: ${theme.color.white};
       fill: ${theme.color.orange};
       cursor: pointer;
 

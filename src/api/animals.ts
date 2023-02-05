@@ -10,3 +10,10 @@ export async function getAnimalData(count: number) {
   );
   return response;
 }
+
+export async function getShelterData(city: number) {
+  const response = await axios.get<AnimalDataType[]>(
+    `${OFFICIAL_API}&animal_area_pkid=${city}`,
+  );
+  return response;
+}
