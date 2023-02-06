@@ -78,7 +78,7 @@ const AboutUs = () => {
             <strong>Medium</strong>
           </a>
           <br />
-          非常感謝！
+          非常感謝！(⁎⁍̴̛ᴗ⁍̴̛⁎)
         </p>
       </Board>
     </S.AboutUsContainer>

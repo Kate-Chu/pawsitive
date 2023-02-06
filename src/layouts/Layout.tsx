@@ -1,21 +1,26 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Outlet } from 'react-router-dom';
 import { css } from '@linaria/core';
+
 import theme from '../styles/base';
 import Header from './Header';
 import Footer from './Footer';
+import Sidebar from './Sidebar';
 import useFavoriteStore from '../store/favoriteStore';
-// import Sidebar from './Sidebar';
+import useUserStore from '../store/userStore';
 
 const queryClient = new QueryClient();
 
 const Layout = () => {
+  const showSidebar = useUserStore((state) => state.showSidebar);
+  const toggleSidebar = useUserStore((state) => state.toggleSidebar);
   const initializeFav = useFavoriteStore((state) => state.initialize);
   initializeFav();
+
   return (
     <div className={globals}>
-      <Header />
-      {/* <Sidebar /> */}
+      <Header toggleSidebar={toggleSidebar} />
+      {showSidebar && <Sidebar toggleSidebar={toggleSidebar} />}
       <main>
         <QueryClientProvider client={queryClient}>
           <Outlet />

@@ -16,12 +16,16 @@ export default Board;
 
 const S = {
   BoardContainer: styled.section`
-    margin: 0 0 4rem;
+    margin: 0 0 4rem -1rem;
     padding: 2rem;
     width: 100%;
     background-color: ${theme.color.white};
     border: 1.2rem solid ${theme.color.orange};
     box-shadow: 1.2rem 1.2rem 0 ${theme.color.darkBlue};
+
+    ${theme.mediaQuery.tabLand} {
+      margin: 0 0 4rem;
+    }
 
     h1 {
       ${theme.font.h1}

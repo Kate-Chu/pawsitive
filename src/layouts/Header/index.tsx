@@ -1,10 +1,16 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { styled } from '@linaria/react';
 import theme from '../../styles/base';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
-const Header = () => {
+type HeaderProps = {
+  toggleSidebar: () => void;
+};
+
+const Header: React.FC<HeaderProps> = (props) => {
+  const { toggleSidebar } = props;
+
   const activeStyle = {
     color: theme.color.gray[100],
     fontWeight: 800,
@@ -17,7 +23,7 @@ const Header = () => {
           <Logo />
         </Link>
       </S.LogoContainer>
-      <S.SidebarButton>
+      <S.SidebarButton onClick={toggleSidebar}>
         <div>
           <span />
           <span />
@@ -119,9 +125,13 @@ const S = {
     }
   `,
 
-  SidebarButton: styled.label`
+  SidebarButton: styled.button`
     height: 2rem;
+    width: 2.4rem;
     position: relative;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 
     span {
       position: absolute;

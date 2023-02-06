@@ -1,14 +1,20 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
 import theme from '../../styles/base';
 
-const Sidebar = () => {
+type SidebarProps = {
+  toggleSidebar: () => void;
+};
+
+const Sidebar: React.FC<SidebarProps> = (props) => {
+  const { toggleSidebar } = props;
+
   return (
     <S.SidebarBg onScroll={(e) => e.stopPropagation()}>
       <S.SideBarContainer>
         <S.SidebarHead>
-          <S.CloseButton>
+          <S.CloseButton onClick={toggleSidebar}>
             <div>
               <span />
               <span />
@@ -17,23 +23,23 @@ const Sidebar = () => {
         </S.SidebarHead>
         <S.SidebarBody>
           <S.LinkList>
-            <S.LinkItem>
+            <S.LinkItem onClick={toggleSidebar}>
               <Link to="home">首頁</Link>
             </S.LinkItem>
 
-            <S.LinkItem>
+            <S.LinkItem onClick={toggleSidebar}>
               <Link to="animals">所有動物</Link>
             </S.LinkItem>
 
-            <S.LinkItem>
+            <S.LinkItem onClick={toggleSidebar}>
               <Link to="favorites">我的最愛</Link>
             </S.LinkItem>
 
-            <S.LinkItem>
+            <S.LinkItem onClick={toggleSidebar}>
               <Link to="tutorial">領養步驟</Link>
             </S.LinkItem>
 
-            <S.LinkItem>
+            <S.LinkItem onClick={toggleSidebar}>
               <Link to="about-us">關於我們</Link>
             </S.LinkItem>
           </S.LinkList>
@@ -79,8 +85,12 @@ const S = {
   `,
 
   CloseButton: styled.label`
-    height: 2rem;
     position: relative;
+    height: 2rem;
+    width: 2.7rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 
     span {
       position: absolute;
