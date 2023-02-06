@@ -39,7 +39,7 @@ const AboutUs = () => {
           >
             行政院農委會的公開 api
           </a>
-          ，感謝每日默默上傳資料的幕後工作人員。
+          ，感謝每日辛勤上傳資料的幕後工作人員。
           <br />
         </p>
         <p>
@@ -78,7 +78,7 @@ const AboutUs = () => {
             <strong>Medium</strong>
           </a>
           <br />
-          非常感謝！(⁎⁍̴̛ᴗ⁍̴̛⁎)
+          非常感謝，祝你有個美好的一天！(⁎⁍̴̛ᴗ⁍̴̛⁎)
         </p>
       </Board>
     </S.AboutUsContainer>
