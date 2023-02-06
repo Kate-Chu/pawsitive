@@ -2,17 +2,20 @@ import React, { memo } from 'react';
 import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
 import theme from '../../styles/base';
+import useUserStore from '../../store/userStore';
 
 type SidebarProps = {
   toggleSidebar: () => void;
 };
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
+  const showSidebar = useUserStore((state) => state.showSidebar);
   const { toggleSidebar } = props;
 
   return (
-    <S.SidebarBg onScroll={(e) => e.stopPropagation()}>
-      <S.SideBarContainer>
+    <S.Aside>
+      {showSidebar && <S.SidebarBg />}
+      <S.SideBarContainer className={showSidebar ? 'sidebar-enter' : undefined}>
         <S.SidebarHead>
           <S.CloseButton onClick={toggleSidebar}>
             <div>
@@ -45,27 +48,31 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
           </S.LinkList>
         </S.SidebarBody>
       </S.SideBarContainer>
-    </S.SidebarBg>
+    </S.Aside>
   );
 };
 
 export default memo(Sidebar);
 
 const S = {
+  Aside: styled.aside`
+    transition: 0.35s ease-in-out;
+  `,
+
   SidebarBg: styled.div`
     width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
-    background-color: ${theme.color.gray[100]}dd;
     z-index: 99;
+    background-color: ${theme.color.gray[100]}dd;
 
     ${theme.mediaQuery.tabLand} {
       display: none;
     }
   `,
 
-  SideBarContainer: styled.aside`
+  SideBarContainer: styled.div`
     background-color: ${theme.color.white};
     opacity: 1;
     height: 100%;
@@ -75,6 +82,12 @@ const S = {
     right: 0;
     z-index: 100;
     overflow: hidden;
+    transition: 0.35s ease-in-out;
+    transform: translateX(100%);
+
+    &.sidebar-enter {
+      transform: translateX(0);
+    }
   `,
 
   SidebarHead: styled.section`
@@ -124,7 +137,7 @@ const S = {
 
   SidebarBody: styled.section`
     background-color: ${theme.color.gray[20]};
-    height: 80%;
+    height: 100vh;
   `,
 
   LinkList: styled.ul`

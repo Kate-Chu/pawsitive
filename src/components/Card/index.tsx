@@ -96,7 +96,11 @@ const Card: React.FC<CardProps> = (props) => {
       <S.CardContainer>
         {showFront ? (
           <S.CardFront>
-            <S.AnimalImg src={img.length ? img : replaceImage} alt="animal" />
+            <S.AnimalImg
+              src={img.length ? img : replaceImage}
+              alt="animal"
+              sizes="(max-width: 640px) 80vw, 33vw"
+            />
             <S.HeartButton onClick={onClickHeart}>
               <img
                 src={isFavorite ? likeIcon : unlikeIcon}
@@ -239,9 +243,14 @@ const S = {
       display: inline-block;
       border: none;
       background-color: transparent;
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1rem;
+      height: 1rem;
       cursor: pointer;
+
+      ${theme.mediaQuery.tabPort} {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   `,
 
@@ -285,6 +294,11 @@ const S = {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   `,
 
   AnimalName: styled.h6`
@@ -304,6 +318,11 @@ const S = {
       cursor: pointer;
       border: none;
       background-color: transparent;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   `,
 

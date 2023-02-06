@@ -25,8 +25,8 @@ const S = {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -34,8 +34,23 @@ const S = {
     box-shadow: 0 0 0.5rem ${theme.color.gray[40]};
     transition: transform 0.15s ease-in-out;
 
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
     :hover {
       transform: translateY(-0.2rem);
+    }
+
+    ${theme.mediaQuery.tabPort} {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    ${theme.mediaQuery.tabLand} {
+      width: 4.5rem;
+      height: 4.5rem;
     }
   `,
 };

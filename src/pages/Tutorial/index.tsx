@@ -76,7 +76,6 @@ export default Tutorial;
 const S = {
   TutorialContainer: styled.article`
     width: 100%;
-    margin-left: -1rem;
     padding: 0 3rem;
 
     ${theme.mediaQuery.desk} {

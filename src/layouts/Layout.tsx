@@ -12,7 +12,7 @@ import useUserStore from '../store/userStore';
 const queryClient = new QueryClient();
 
 const Layout = () => {
-  const showSidebar = useUserStore((state) => state.showSidebar);
+  // const showSidebar = useUserStore((state) => state.showSidebar);
   const toggleSidebar = useUserStore((state) => state.toggleSidebar);
   const initializeFav = useFavoriteStore((state) => state.initialize);
   initializeFav();
@@ -20,7 +20,7 @@ const Layout = () => {
   return (
     <div className={globals}>
       <Header toggleSidebar={toggleSidebar} />
-      {showSidebar && <Sidebar toggleSidebar={toggleSidebar} />}
+      <Sidebar toggleSidebar={toggleSidebar} />
       <main>
         <QueryClientProvider client={queryClient}>
           <Outlet />
@@ -48,6 +48,10 @@ const globals = css`
       font-weight: 400;
       line-height: 1.7;
       color: ${theme.color.darkBlue};
+    }
+
+    .no-scroll {
+      overflow: hidden;
     }
 
     .bg-orange {
