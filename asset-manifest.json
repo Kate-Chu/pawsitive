@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pawsitive/static/css/main.e383069f.css",
+    "main.css": "/pawsitive/static/css/main.5abc762b.css",
     "main.js": "/pawsitive/static/js/main.bdcf388f.js",
     "static/media/cat-1-1024.jpg": "/pawsitive/static/media/cat-1-1024.4fd24581f9d7cb91c761.jpg",
     "static/media/dog-2-1024.jpg": "/pawsitive/static/media/dog-2-1024.8878bf9f4e8f60f2bf55.jpg",
@@ -31,11 +31,11 @@
     "static/media/like.svg": "/pawsitive/static/media/like.620f5d6dc1f98b0df7d609e46b7131d9.svg",
     "static/media/unlike.svg": "/pawsitive/static/media/unlike.f57a32537d5e4a4c4636111082edaa59.svg",
     "static/media/more.svg": "/pawsitive/static/media/more.75d6299aa267f93fcc1657b185a71c55.svg",
-    "main.e383069f.css.map": "/pawsitive/static/css/main.e383069f.css.map",
+    "main.5abc762b.css.map": "/pawsitive/static/css/main.5abc762b.css.map",
     "main.bdcf388f.js.map": "/pawsitive/static/js/main.bdcf388f.js.map"
   },
   "entrypoints": [
-    "static/css/main.e383069f.css",
+    "static/css/main.5abc762b.css",
     "static/js/main.bdcf388f.js"
   ]
 }
