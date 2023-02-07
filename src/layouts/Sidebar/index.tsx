@@ -78,8 +78,7 @@ const S = {
     right: 0;
     z-index: 100;
     transform: translate(100%);
-    transition: transform 0.35s ease-in-out 0.1s;
-
+    transition: transform 0.35s ease-in-out;
     & * {
       display: none;
     }
