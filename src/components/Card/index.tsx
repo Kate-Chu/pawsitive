@@ -243,8 +243,8 @@ const S = {
       display: inline-block;
       border: none;
       background-color: transparent;
-      width: max-content;
-      height: max-content;
+      width: 1.5rem;
+      height: 1.5rem;
       cursor: pointer;
 
       ${theme.mediaQuery.tabPort} {
