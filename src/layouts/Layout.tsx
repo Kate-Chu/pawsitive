@@ -40,12 +40,6 @@ const globals = css`
       box-sizing: inherit;
     }
 
-    html,
-    body {
-      width: 100vw;
-      overflow-x: hidden;
-    }
-
     body {
       height: 100vh;
       box-sizing: border-box;

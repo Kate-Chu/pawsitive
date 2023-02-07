@@ -119,6 +119,7 @@ const S = {
 
     img {
       width: 100%;
+      height: auto;
     }
 
     ${theme.mediaQuery.tabPort} {
