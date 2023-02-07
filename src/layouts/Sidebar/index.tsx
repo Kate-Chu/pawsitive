@@ -17,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
       {showSidebar && <S.SidebarBg />}
 
       <S.SideBarContainer className={showSidebar ? 'sidebar-enter' : undefined}>
-        <S.SidebarHead>
+        <S.SidebarHead className="sidebar-head">
           <S.CloseButton onClick={toggleSidebar}>
             <div>
               <span />
@@ -75,18 +75,34 @@ const S = {
 
   SideBarContainer: styled.div`
     background-color: ${theme.color.white};
-    opacity: 1;
     height: 100%;
-    width: 85%;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 100;
-    transition: 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     transform: translate(100%);
+    width: 0;
+
+    & * {
+      display: none;
+    }
 
     &.sidebar-enter {
+      width: 85%;
       transform: translate(0);
+
+      & * {
+        display: block;
+      }
+
+      & .sidebar-head {
+        display: flex;
+      }
+
+      & li {
+        display: flex;
+      }
     }
   `,
 
@@ -141,9 +157,7 @@ const S = {
   `,
 
   LinkList: styled.ul`
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     list-style: none;
     padding: 0;
