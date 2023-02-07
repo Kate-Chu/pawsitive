@@ -12,7 +12,6 @@ import useUserStore from '../store/userStore';
 const queryClient = new QueryClient();
 
 const Layout = () => {
-  // const showSidebar = useUserStore((state) => state.showSidebar);
   const toggleSidebar = useUserStore((state) => state.toggleSidebar);
   const initializeFav = useFavoriteStore((state) => state.initialize);
   initializeFav();

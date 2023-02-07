@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { styled } from '@linaria/react';
 import theme from '../../styles/base';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 
 type HeaderProps = {
   toggleSidebar: () => void;
@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     <S.AppHeader>
       <S.LogoContainer>
         <Link to="/home">
-          <Logo />
+          <img src={logo} alt="logo" />
         </Link>
       </S.LogoContainer>
       <S.SidebarButton onClick={toggleSidebar}>
@@ -115,6 +115,10 @@ const S = {
       width: 100%;
       display: flex;
       align-items: center;
+    }
+
+    img {
+      width: 100%;
     }
 
     ${theme.mediaQuery.tabPort} {
