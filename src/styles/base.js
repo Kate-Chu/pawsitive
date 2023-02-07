@@ -26,11 +26,11 @@ const theme = {
     },
     h3: {
       'font-size': '1.5rem',
-      'font-weight': '600',
+      'font-weight': '700',
     },
     h4: {
       'font-size': '1.375rem',
-      'font-weight': '600',
+      'font-weight': '700',
     },
     h5: {
       'font-size': '1.25rem',

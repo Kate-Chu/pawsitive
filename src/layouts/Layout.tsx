@@ -47,6 +47,11 @@ const globals = css`
       font-weight: 400;
       line-height: 1.7;
       color: ${theme.color.darkBlue};
+      font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang TC', '儷黑 Pro',
+        'LiHei Pro', 'Heiti TC', 'PingFang SC', 'Heiti SC', 文泉驛正黑,
+        'WenQuanYi Zen Hei', 'Hiragino Sans GB', 微軟正黑體,
+        'Microsoft JhengHei UI', 'Microsoft JhengHei', 'Microsoft YaHei',
+        'Noto Sans TC', sans-serif;
     }
 
     footer {
