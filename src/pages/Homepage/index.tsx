@@ -26,11 +26,6 @@ const Homepage = () => {
         }
       });
     });
-
-    window.scrollTo({
-      top: 100,
-      behavior: 'smooth',
-    });
   };
 
   const mouseOutHandler = () => {
@@ -75,7 +70,10 @@ const Homepage = () => {
         </S.MapContainer>
         <S.Description>
           <h2>{placeData.get(selectCity).place}</h2>
-          {shelters.length && shelters.map((item) => <p key={item}>{item}</p>)}
+          <ul>
+            {shelters.length &&
+              shelters.map((item) => <li key={item}>{item}</li>)}
+          </ul>
         </S.Description>
       </S.MapSection>
       <link rel="preconnect" href={OFFICIAL_API} />
@@ -142,8 +140,10 @@ const S = {
       ${theme.font.h4}
     }
 
-    p {
+    li {
       margin: 0.6rem 0;
+      text-decoration: none;
+      list-style: none;
       ${theme.font.p}
       font-size: 1.25rem;
     }

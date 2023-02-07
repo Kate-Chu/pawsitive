@@ -154,7 +154,7 @@ const S = {
 
   TopBtnWrapper: styled.div`
     position: fixed;
-    bottom: 2rem;
+    bottom: 4.5rem;
     right: 2rem;
 
     ${theme.mediaQuery.tabPort} {

@@ -1,17 +1,34 @@
-import { memo } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { styled } from '@linaria/react';
 import theme from '../../styles/base';
 import { ReactComponent as Logo } from '../../assets/browser-icon.svg';
 
 const Footer = () => {
-  return (
+  const [showFooter, setShowFooter] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.pageYOffset < 20) {
+      setShowFooter(true);
+    } else {
+      setShowFooter(false);
+    }
+  };
+
+  return showFooter ? (
     <S.AppFooter>
       <S.LogoContainer>
         <Logo />
       </S.LogoContainer>
       <S.Text>&copy; 2023 by Amber Fragments</S.Text>
     </S.AppFooter>
-  );
+  ) : null;
 };
 
 export default memo(Footer);

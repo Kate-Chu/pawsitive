@@ -2,39 +2,55 @@ import { styled } from '@linaria/react';
 import { Link } from 'react-router-dom';
 
 import Card from '../../components/Card';
+import CircleButton from '../../components/CircleButton';
 import theme from '../../styles/base';
 import useFavoriteStore from '../../store/favoriteStore';
 import replaceImg from '../../assets/image replace.svg';
+import returnTopIcon from '../../assets/top.svg';
 
 const Favorites = () => {
   const favorite = useFavoriteStore((state) => state.favorite);
+
+  const onClickScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <S.PageWrapper>
       <S.FavoritesContainer className="w-full">
         <S.Title>我的收藏</S.Title>
         {favorite.length ? (
-          <S.CardsContainer>
-            {favorite.map((item) => {
-              return (
-                <Card
-                  key={item.id}
-                  id={item.id}
-                  img={item.img}
-                  name={item.name}
-                  sex={item.sex}
-                  status={item.status}
-                  phone={item.phone}
-                  variety={item.variety}
-                  remark={item.remark}
-                  shelter={item.shelter}
-                  place={item.place.slice(0, 3)}
-                  updateDate={item.updateDate}
-                  isFavorite
-                />
-              );
-            })}
-          </S.CardsContainer>
+          <>
+            <S.CardsContainer>
+              {favorite.map((item) => {
+                return (
+                  <Card
+                    key={item.id}
+                    id={item.id}
+                    img={item.img}
+                    name={item.name}
+                    sex={item.sex}
+                    status={item.status}
+                    phone={item.phone}
+                    variety={item.variety}
+                    remark={item.remark}
+                    shelter={item.shelter}
+                    place={item.place.slice(0, 3)}
+                    updateDate={item.updateDate}
+                    isFavorite
+                  />
+                );
+              })}
+            </S.CardsContainer>
+            <S.TopBtnWrapper>
+              <CircleButton onClick={onClickScrollToTop}>
+                <img src={returnTopIcon} alt="return top" />
+              </CircleButton>
+            </S.TopBtnWrapper>
+          </>
         ) : (
           <S.CtaContainer>
             <Card
@@ -102,6 +118,27 @@ const S = {
     justify-content: space-around;
     flex-shrink: 1;
     margin: 0 0 2.5rem;
+  `,
+
+  TopBtnWrapper: styled.div`
+    position: fixed;
+    bottom: 4.5rem;
+    right: 2rem;
+
+    ${theme.mediaQuery.tabPort} {
+      bottom: 4.5rem;
+      right: 4.5rem;
+    }
+
+    ${theme.mediaQuery.tabLand} {
+      bottom: 5rem;
+      right: 5rem;
+    }
+
+    ${theme.mediaQuery.bigDesk} {
+      bottom: 6rem;
+      right: 6rem;
+    }
   `,
 
   CtaContainer: styled.section`
