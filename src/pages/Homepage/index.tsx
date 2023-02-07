@@ -3,10 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
 
 import Carousal from '../../components/Carousal';
+import Map from '../../components/Map';
 import theme from '../../styles/base';
 import placeData from './data';
 import { getAnimalData } from '../../api/animals';
-import { ReactComponent as TaiwanMap } from '../../assets/tw.svg';
 
 const Homepage = () => {
   const [selectCity, setSelectCity] = useState<string>('taipei_city');
@@ -66,7 +66,7 @@ const Homepage = () => {
       </S.FeatureSection>
       <S.MapSection>
         <S.MapContainer>
-          <TaiwanMap onMouseEnter={onHover} onMouseOut={mouseOutHandler} />
+          <Map onHover={onHover} mouseOutHandler={mouseOutHandler} />
         </S.MapContainer>
         <S.Description>
           <h2>{placeData.get(selectCity).place}</h2>

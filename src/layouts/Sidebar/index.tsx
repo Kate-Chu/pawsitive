@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
   const { toggleSidebar } = props;
 
   return (
-    <S.Aside>
+    <>
       {showSidebar && <S.SidebarBg />}
 
       <S.SideBarContainer className={showSidebar ? 'sidebar-enter' : undefined}>
@@ -49,15 +49,13 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
           </S.LinkList>
         </S.SidebarBody>
       </S.SideBarContainer>
-    </S.Aside>
+    </>
   );
 };
 
 export default memo(Sidebar);
 
 const S = {
-  Aside: styled.aside``,
-
   SidebarBg: styled.div`
     width: 100vw;
     height: 100vh;
