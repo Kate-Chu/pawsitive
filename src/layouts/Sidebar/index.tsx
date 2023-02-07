@@ -56,9 +56,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
 export default memo(Sidebar);
 
 const S = {
-  Aside: styled.aside`
-    transition: 0.35s ease-in-out;
-  `,
+  Aside: styled.aside``,
 
   SidebarBg: styled.div`
     width: 100vw;
@@ -76,13 +74,13 @@ const S = {
   SideBarContainer: styled.div`
     background-color: ${theme.color.white};
     height: 100%;
+    width: 0;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 100;
-    transition: transform 0.35s ease-in-out;
     transform: translate(100%);
-    width: 0;
+    transition: transform 0.35s ease-in-out 0.1s;
 
     & * {
       display: none;
