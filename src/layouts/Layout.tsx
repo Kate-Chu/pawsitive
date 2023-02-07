@@ -49,6 +49,11 @@ const globals = css`
       color: ${theme.color.darkBlue};
     }
 
+    footer {
+      position: fixed;
+      bottom: 0;
+    }
+
     .no-scroll {
       overflow: hidden;
     }

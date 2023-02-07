@@ -18,14 +18,14 @@ export default memo(Footer);
 
 const S = {
   AppFooter: styled.footer`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${theme.color.darkBlue}
-  width: 100%;
-  padding: 0.5rem 0;
-  color: ${theme.color.white};
-`,
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 0.5rem 0;
+    color: ${theme.color.white};
+    background-color: ${theme.color.darkBlue};
+  `,
 
   LogoContainer: styled.span`
   display:inline-block
