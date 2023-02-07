@@ -166,9 +166,9 @@ const S = {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    margin-bottom: 4rem;
 
     ${theme.mediaQuery.tabLand} {
-      margin-bottom: 4rem;
       flex-direction: row;
       gap: 5rem;
     }

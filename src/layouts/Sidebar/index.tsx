@@ -15,6 +15,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
   return (
     <S.Aside>
       {showSidebar && <S.SidebarBg />}
+
       <S.SideBarContainer className={showSidebar ? 'sidebar-enter' : undefined}>
         <S.SidebarHead>
           <S.CloseButton onClick={toggleSidebar}>
@@ -60,7 +61,7 @@ const S = {
   `,
 
   SidebarBg: styled.div`
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -81,12 +82,11 @@ const S = {
     top: 0;
     right: 0;
     z-index: 100;
-    overflow: hidden;
     transition: 0.35s ease-in-out;
-    transform: translateX(100%);
+    transform: translate(100%);
 
     &.sidebar-enter {
-      transform: translateX(0);
+      transform: translate(0);
     }
   `,
 
