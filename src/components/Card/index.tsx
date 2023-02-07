@@ -243,9 +243,14 @@ const S = {
       display: inline-block;
       border: none;
       background-color: transparent;
-      width: 1.2rem;
-      height: 1.2rem;
+      width: 1.4rem;
+      height: 1.4rem;
       cursor: pointer;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
 
       ${theme.mediaQuery.tabPort} {
         width: 1.5rem;
