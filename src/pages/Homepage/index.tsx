@@ -6,7 +6,7 @@ import Carousal from '../../components/Carousal';
 import Map from '../../components/Map';
 import theme from '../../styles/base';
 import placeData from './data';
-import { getAnimalData } from '../../api/animals';
+import { getAnimalData, OFFICIAL_API } from '../../api/animals';
 
 const Homepage = () => {
   const [selectCity, setSelectCity] = useState<string>('taipei_city');
@@ -25,6 +25,11 @@ const Homepage = () => {
           setSelectCity(tagname);
         }
       });
+    });
+
+    window.scrollTo({
+      top: 100,
+      behavior: 'smooth',
     });
   };
 
@@ -73,6 +78,8 @@ const Homepage = () => {
           {shelters.length && shelters.map((item) => <p key={item}>{item}</p>)}
         </S.Description>
       </S.MapSection>
+      <link rel="preconnect" href={OFFICIAL_API} />
+      <link rel="dns-prefetch" href={OFFICIAL_API} />
     </S.HomepageContainer>
   );
 };

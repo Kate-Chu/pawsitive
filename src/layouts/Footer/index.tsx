@@ -22,6 +22,7 @@ const S = {
     justify-content: center;
     align-items: center;
     width: 100vw;
+    margin-top: 2rem;
     padding: 0.5rem 0;
     color: ${theme.color.white};
     background-color: ${theme.color.darkBlue};
