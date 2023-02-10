@@ -1,17 +1,19 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { css } from '@linaria/core';
 
 import theme from '../styles/base';
 import Header from './Header';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
+import Homepage from '../pages/Homepage';
 import useFavoriteStore from '../store/favoriteStore';
 import useUserStore from '../store/userStore';
 
 const queryClient = new QueryClient();
 
 const Layout = () => {
+  const location = useLocation();
   const toggleSidebar = useUserStore((state) => state.toggleSidebar);
   const initializeFav = useFavoriteStore((state) => state.initialize);
   initializeFav();
@@ -22,7 +24,7 @@ const Layout = () => {
       <Sidebar toggleSidebar={toggleSidebar} />
       <main>
         <QueryClientProvider client={queryClient}>
-          <Outlet />
+          {location.pathname === '/' ? <Homepage /> : <Outlet />}
         </QueryClientProvider>
       </main>
       <Footer />
