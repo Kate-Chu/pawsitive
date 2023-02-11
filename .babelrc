@@ -6,5 +6,6 @@
     ["@babel/preset-typescript", { "runtime": "automatic" }],
     ["react-app", { "flow": false, "typescript": true }],
     "@linaria"
-  ]
+  ],
+  "plugins": ["@babel/plugin-syntax-dynamic-import"]
 }

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import About from './pages/AboutUs';
 import Animals from './pages/Animals';
-import Favorites from './pages/Favorites';
 import LandingPage from './pages/Homepage';
 import Layout from './layouts/Layout';
-import Tutorial from './pages/Tutorial';
-import ErrorPage from './pages/ErrorPage';
+
+const About = React.lazy(() => import('./pages/AboutUs'));
+const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
+const Favorites = React.lazy(() => import('./pages/Favorites'));
+const Tutorial = React.lazy(() => import('./pages/Tutorial'));
 
 window.React = React;
 
@@ -31,6 +32,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </React.StrictMode>,
 );
