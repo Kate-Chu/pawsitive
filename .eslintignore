@@ -1,6 +1,9 @@
-build/*
 dist
 node_modules
 public
 !.eslintrc.js
 .babelrc
+
+build/index.html
+build/favicon.ico
+build/static/

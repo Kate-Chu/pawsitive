@@ -18,13 +18,18 @@ jobs:
 
     steps: 
       - name: Checkout to the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
-      - name: Install package dependencies
-        run: yarn install
+      - name: Setup setup-node and add yarn cache option
+        uses: actions/setup-node@v3
+        with:
+          node-version: '19'
+          cache: 'yarn'
 
-      - name: Test
-        run: yarn test
+      - name: Install (or use cache file) and Test
+        run: |
+          yarn install --frozen-lockfile
+          yarn test
 
       - name: Build
         run: yarn run build
