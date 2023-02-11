@@ -17,30 +17,31 @@ import dog2Sm from '../../assets/homepage-imgs/dog-2-640.jpg';
 import dog2Md from '../../assets/homepage-imgs/dog-2-768.jpg';
 import dog2Lg from '../../assets/homepage-imgs/dog-2-1024.jpg';
 
+const images = [
+  {
+    sm: dog1Sm,
+    md: dog1Md,
+    lg: dog1Lg,
+  },
+  {
+    sm: cat1Sm,
+    md: cat1Md,
+    lg: cat1Lg,
+  },
+  {
+    sm: dog2Sm,
+    md: dog2Md,
+    lg: dog2Lg,
+  },
+  {
+    sm: cat2Sm,
+    md: cat2Md,
+    lg: cat2Lg,
+  },
+];
+
 const Carousal = () => {
   const [imageIdx, setImageIdx] = useState(0);
-  const images = [
-    {
-      sm: dog1Sm,
-      md: dog1Md,
-      lg: dog1Lg,
-    },
-    {
-      sm: cat1Sm,
-      md: cat1Md,
-      lg: cat1Lg,
-    },
-    {
-      sm: dog2Sm,
-      md: dog2Md,
-      lg: dog2Lg,
-    },
-    {
-      sm: cat2Sm,
-      md: cat2Md,
-      lg: cat2Lg,
-    },
-  ];
 
   const onClick = (btn: 'prev' | 'next') => {
     if (btn === 'prev') {

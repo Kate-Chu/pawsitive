@@ -6,6 +6,9 @@ import Carousal from '../../components/Carousal';
 import Map from '../../components/Map';
 import theme from '../../styles/base';
 import placeData from './data';
+import dog from '../../assets/dog.svg';
+import cat from '../../assets/cat.svg';
+import food from '../../assets/food-icon_2.svg';
 import { getAnimalData, OFFICIAL_API } from '../../api/animals';
 
 const Homepage = () => {
@@ -76,6 +79,9 @@ const Homepage = () => {
           </ul>
         </S.Description>
       </S.MapSection>
+      <link rel="preload" href={dog} />
+      <link rel="preload" href={cat} />
+      <link rel="preload" href={food} />
       <link rel="preconnect" href={OFFICIAL_API} />
       <link rel="dns-prefetch" href={OFFICIAL_API} />
     </S.HomepageContainer>

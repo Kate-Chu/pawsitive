@@ -41,7 +41,7 @@ const Animals = () => {
         <S.Title>所有動物</S.Title>
         <S.CardsContainer>
           {isSuccess ? (
-            data.data.slice(0, count - 20).map((item) => {
+            data?.data.slice(0, count - 20).map((item) => {
               return (
                 <Card
                   key={item.animal_id}

@@ -11,10 +11,10 @@ const Tutorial = () => {
     <S.TutorialContainer>
       <S.Title>領養流程</S.Title>
       <S.Illustration>
-        <img src={dog} alt="dog" className="dog" />
+        <img src={dog} alt="dog" className="dog" width="160" />
         <img src={food} alt="food" className="dog-food" />
         <img src={food} alt="food" className="cat-food" />
-        <img src={cat} alt="cat" className="cat" />
+        <img src={cat} alt="cat" className="cat" width="160" />
       </S.Illustration>
 
       <Board>
