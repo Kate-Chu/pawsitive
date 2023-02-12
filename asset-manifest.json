@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pawsitive/static/css/main.9eb4b740.css",
-    "main.js": "/pawsitive/static/js/main.aba50f9e.js",
+    "main.css": "/pawsitive/static/css/main.24891e25.css",
+    "main.js": "/pawsitive/static/js/main.faab07c7.js",
     "static/css/120.1821dd46.chunk.css": "/pawsitive/static/css/120.1821dd46.chunk.css",
     "static/js/120.90755c45.chunk.js": "/pawsitive/static/js/120.90755c45.chunk.js",
     "static/css/436.6b12ae9a.chunk.css": "/pawsitive/static/css/436.6b12ae9a.chunk.css",
@@ -39,8 +39,8 @@
     "static/media/like.svg": "/pawsitive/static/media/like.620f5d6dc1f98b0df7d609e46b7131d9.svg",
     "static/media/unlike.svg": "/pawsitive/static/media/unlike.f57a32537d5e4a4c4636111082edaa59.svg",
     "static/media/more.svg": "/pawsitive/static/media/more.75d6299aa267f93fcc1657b185a71c55.svg",
-    "main.9eb4b740.css.map": "/pawsitive/static/css/main.9eb4b740.css.map",
-    "main.aba50f9e.js.map": "/pawsitive/static/js/main.aba50f9e.js.map",
+    "main.24891e25.css.map": "/pawsitive/static/css/main.24891e25.css.map",
+    "main.faab07c7.js.map": "/pawsitive/static/js/main.faab07c7.js.map",
     "120.1821dd46.chunk.css.map": "/pawsitive/static/css/120.1821dd46.chunk.css.map",
     "120.90755c45.chunk.js.map": "/pawsitive/static/js/120.90755c45.chunk.js.map",
     "436.6b12ae9a.chunk.css.map": "/pawsitive/static/css/436.6b12ae9a.chunk.css.map",
@@ -51,7 +51,7 @@
     "590.2389c077.chunk.js.map": "/pawsitive/static/js/590.2389c077.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9eb4b740.css",
-    "static/js/main.aba50f9e.js"
+    "static/css/main.24891e25.css",
+    "static/js/main.faab07c7.js"
   ]
 }
