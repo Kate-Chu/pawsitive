@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { flushSync } from 'react-dom';
 import { useQuery } from '@tanstack/react-query';
 import { styled } from '@linaria/react';
@@ -11,8 +11,10 @@ import useFavoriteStore from '../../store/favoriteStore';
 import theme from '../../styles/base';
 import returnTopIcon from '../../assets/top.svg';
 import { getAnimalData } from '../../api/animals';
+import LoadingPage from '../LoadingPage';
 
 const Animals = () => {
+  const [show, setShow] = useState(false);
   const [count, setCount] = useState(40);
   const favorites = useFavoriteStore((state) => state.favorite);
 
@@ -35,7 +37,13 @@ const Animals = () => {
     });
   };
 
-  return (
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 2000);
+  }, []);
+
+  return show ? (
     <S.PageWrapper>
       <S.AnimalsContainer className="w-full">
         <S.Title>所有動物</S.Title>
@@ -102,6 +110,8 @@ const Animals = () => {
         </S.TopBtnWrapper>
       </S.AnimalsContainer>
     </S.PageWrapper>
+  ) : (
+    <LoadingPage />
   );
 };
 

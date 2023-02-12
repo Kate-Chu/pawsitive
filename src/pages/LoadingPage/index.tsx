@@ -8,7 +8,7 @@ import footprint from '../../assets/browser-icon.svg';
 type showFootprintType = string[];
 
 let index = 0;
-const walkingFootprint = [0, 1, 3, 7, 15];
+const walkingFootprint = [1, 3, 7, 15];
 
 const turnBinary = (num: number) => {
   return num.toString(2).padStart(4, '0').split('');
@@ -26,7 +26,7 @@ const LoadingPage = () => {
       } else {
         index += 1;
       }
-      console.log(index);
+
       setShowFootprint(turnBinary(walkingFootprint[index]));
     }, 500);
 
@@ -38,6 +38,8 @@ const LoadingPage = () => {
       <S.Image
         src={footprint}
         alt="footprint"
+        // eslint-disable-next-line react/no-array-index-key
+        key={`footprint-${i}`}
         className={`footprint footprint-${i} ${
           Number(item) ? undefined : 'invisible'
         }`}

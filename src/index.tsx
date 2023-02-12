@@ -23,7 +23,6 @@ const router = createHashRouter([
       { path: 'favorites', element: <Favorites /> },
       { path: 'about-us', element: <About /> },
       { path: 'tutorial', element: <Tutorial /> },
-      { path: 'loading', element: <LoadingPage /> },
     ],
     errorElement: <ErrorPage />,
   },
