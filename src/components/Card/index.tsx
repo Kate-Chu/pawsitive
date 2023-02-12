@@ -165,20 +165,17 @@ const S = {
     justify-content: center;
     align-items: center;
     margin: 0.2rem 0;
-    width: 100%;
+    width: max-content;
 
     ${theme.mediaQuery.tabPort} {
-      width: 50%;
     }
 
     ${theme.mediaQuery.tabLand} {
       margin: 1.6rem;
-      width: 27%;
     }
 
     ${theme.mediaQuery.desk} {
       margin: 1.8rem;
-      width: 20%;
     }
   `,
 
