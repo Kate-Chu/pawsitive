@@ -17,11 +17,11 @@
 
 ## Open source kits and API we have used
 
-- Useing [TypeScript](https://www.typescriptlang.org/) to develop
+- Using [TypeScript](https://www.typescriptlang.org/) to develop
 - Using [React](https://github.com/facebook/react) v.18 as frontend framework
 - Using [React-query](https://tanstack.com/query/v4/docs/react/quick-start) v.4 (also known as TanStack query) for fetching api
 - Using [Zustand](https://github.com/pmndrs/zustand) for global state environment
-- Useing [Linaria](https://github.com/callstack/linaria) to write zero-runtime styled-component (CSS in JS)
+- Using [Linaria](https://github.com/callstack/linaria) to write zero-runtime styled-component (CSS in JS)
 - Using [Jest](https://jestjs.io/) to test
 - Using [GitHub Actions](https://github.com/features/actions) to accomplish ci/cd
 - Using [ESLint](https://eslint.org/) to statically analyze coding style

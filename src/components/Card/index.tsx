@@ -66,6 +66,7 @@ const Card: React.FC<CardProps> = (props) => {
     isFavorite,
   } = props;
   const [showFront, setShowFront] = useState(true);
+  const [imgSrc, setImgSrc] = useState(replaceImage);
   const addFav = useFavoriteStore((state) => state.add);
   const removeFav = useFavoriteStore((state) => state.remove);
 
@@ -91,15 +92,22 @@ const Card: React.FC<CardProps> = (props) => {
     }
   };
 
+  const onLoad = () => {
+    if (img.length) {
+      setImgSrc(img);
+    }
+  };
+
   return (
     <S.AnimalData>
       <S.CardContainer>
         {showFront ? (
           <S.CardFront>
             <S.AnimalImg
-              src={img.length ? img : replaceImage}
+              src={imgSrc}
               alt="animal"
               sizes="(max-width: 640px) 80vw, 33vw"
+              onLoad={onLoad}
             />
             <S.HeartButton onClick={onClickHeart}>
               <img
@@ -142,7 +150,7 @@ const Card: React.FC<CardProps> = (props) => {
               </p>
               <p>
                 <strong>備註</strong>
-                {remark}
+                {remark.length > 30 ? `${remark.slice(0, 30)}...` : remark}
               </p>
             </S.CardBackBody>
           </S.CardBack>

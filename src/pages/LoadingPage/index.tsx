@@ -28,7 +28,7 @@ const LoadingPage = () => {
       }
 
       setShowFootprint(turnBinary(walkingFootprint[index]));
-    }, 500);
+    }, 350);
 
     return () => clearInterval(id);
   });
@@ -49,10 +49,9 @@ const LoadingPage = () => {
 
   return (
     <S.LoadingPageContainer>
-      <section>
-        <S.Image src={dog} alt="dog" className="dog" />
-        <S.Text>Loading...</S.Text>
-      </section>
+      <S.Image src={dog} alt="dog" className="dog" />
+      <S.Text>Loading...</S.Text>
+
       {footprints}
     </S.LoadingPageContainer>
   );
@@ -101,7 +100,7 @@ const S = {
 
     &.footprint {
       width: 1rem;
-      margin-left: 1.4rem;
+      margin-left: 1rem;
       transform: rotate(-45deg);
 
       ${theme.mediaQuery.tabLand} {

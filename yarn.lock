@@ -486,7 +486,7 @@
 
 "@babel/plugin-syntax-dynamic-import@^7.8.3":
   version "7.8.3"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.8.3.tgz#62bf98b2da3cd21d626154fc96ee5b3cb68eacb3"
+  resolved "https://registry.npmjs.org/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.8.3.tgz"
   integrity sha512-5gdGbFon+PszYzqs83S3E5mpi7/y/8M9eC90MRTZfduQOYW76ig6SOSPNe41IG5LoP3FGBn2N0RjVDSQiS94kQ==
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
@@ -1739,10 +1739,10 @@
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@linaria/babel-preset@^4.3.3":
-  version "4.3.3"
-  resolved "https://registry.npmjs.org/@linaria/babel-preset/-/babel-preset-4.3.3.tgz"
-  integrity sha512-/6FK2bDlJelX9kH65tFtk/qsIBLGXsZ+vwoEQ3m33AeHSSEL/syZwk3nyElvcTehPJChmMyntjy7brRIeoXnpw==
+"@linaria/babel-preset@^4.3.3", "@linaria/babel-preset@^4.4.1":
+  version "4.4.1"
+  resolved "https://registry.npmjs.org/@linaria/babel-preset/-/babel-preset-4.4.1.tgz"
+  integrity sha512-C5z7gE70i62rtTPyCQaCskfT9jkoue2vO1RG+vxtuf/pKIdfHz177wFTzyfNVvLw+WVdhOtCyO8rzq6+4Tmnig==
   dependencies:
     "@babel/core" "^7.20.2"
     "@babel/generator" "^7.20.4"
@@ -1750,24 +1750,24 @@
     "@babel/template" "^7.18.10"
     "@babel/traverse" "^7.20.1"
     "@babel/types" "^7.20.2"
-    "@linaria/core" "^4.2.5"
+    "@linaria/core" "^4.2.6"
     "@linaria/logger" "^4.0.0"
-    "@linaria/shaker" "^4.2.7"
-    "@linaria/tags" "^4.3.0"
-    "@linaria/utils" "^4.3.0"
-    cosmiconfig "^5.1.0"
+    "@linaria/shaker" "^4.2.8"
+    "@linaria/tags" "^4.3.1"
+    "@linaria/utils" "^4.3.1"
+    cosmiconfig "^8.0.0"
     find-up "^5.0.0"
     source-map "^0.7.3"
     stylis "^3.5.4"
 
-"@linaria/core@^4.2.5":
-  version "4.2.5"
-  resolved "https://registry.npmjs.org/@linaria/core/-/core-4.2.5.tgz"
-  integrity sha512-cRjF0utcr5yZa/aMdzW2aupSzlSwivfPWbjJGu/vQ8bKCTnuUnC9M+SrujnSQqQ7/kIHeZ98LfMxbfN3ZX6DPg==
+"@linaria/core@^4.2.5", "@linaria/core@^4.2.6":
+  version "4.2.6"
+  resolved "https://registry.npmjs.org/@linaria/core/-/core-4.2.6.tgz"
+  integrity sha512-AKB3xh20KJ3ZPnynJkLd1X1y/qSDYu2HVHPXa28ouDbGoUpPLrl3/nsdoqalzu/igqnDYCOLqT9qXbuT3vG8ww==
   dependencies:
     "@linaria/logger" "^4.0.0"
-    "@linaria/tags" "^4.3.0"
-    "@linaria/utils" "^4.3.0"
+    "@linaria/tags" "^4.3.1"
+    "@linaria/utils" "^4.3.1"
 
 "@linaria/logger@^4.0.0":
   version "4.0.0"
@@ -1789,10 +1789,10 @@
     react-html-attributes "^1.4.6"
     ts-invariant "^0.10.3"
 
-"@linaria/shaker@^4.2.7":
-  version "4.2.7"
-  resolved "https://registry.npmjs.org/@linaria/shaker/-/shaker-4.2.7.tgz"
-  integrity sha512-oGxlACd4BT/ph/eUpJPj1sIC32QuYBPsS3EbbATw3YPzHPo66NHlW9pyOCsAMj3wK1bs1vxgacbxSPo06ZyfRw==
+"@linaria/shaker@^4.2.7", "@linaria/shaker@^4.2.8":
+  version "4.2.8"
+  resolved "https://registry.npmjs.org/@linaria/shaker/-/shaker-4.2.8.tgz"
+  integrity sha512-+0ZZNNcNxLPiMFy/lEj9lkfyUMDnnP+A81PiqLXS2B8rJXfzgjuQDYVFRQ7Eh/ltw2+vLzUKEq+29jcFQq2AjQ==
   dependencies:
     "@babel/core" "^7.20.2"
     "@babel/generator" "^7.20.4"
@@ -1801,23 +1801,23 @@
     "@babel/plugin-transform-template-literals" "^7.18.9"
     "@babel/preset-env" "^7.20.2"
     "@linaria/logger" "^4.0.0"
-    "@linaria/utils" "^4.3.0"
+    "@linaria/utils" "^4.3.1"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
     ts-invariant "^0.10.3"
 
-"@linaria/tags@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.npmjs.org/@linaria/tags/-/tags-4.3.0.tgz"
-  integrity sha512-ZFFZ+iuWg/3fvVeDVmnJVn0TSJYFlgA7SbZqN/Zx1FX/7EpM03lB1rprTV7svJyKKG46uqTXY7kdKCTwczmL1w==
+"@linaria/tags@^4.3.0", "@linaria/tags@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.npmjs.org/@linaria/tags/-/tags-4.3.1.tgz"
+  integrity sha512-H1CgDYnZg8+TBiezoRxo6uBYWDzAqV/P+siFlbPGWgykzfqyO8p5XL/awk41sAdR07+2JhpXUowNUOEo7LJTYg==
   dependencies:
     "@babel/generator" "^7.20.4"
     "@linaria/logger" "^4.0.0"
-    "@linaria/utils" "^4.3.0"
+    "@linaria/utils" "^4.3.1"
 
-"@linaria/utils@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.npmjs.org/@linaria/utils/-/utils-4.3.0.tgz"
-  integrity sha512-TxAi4HbU1Ysjdb5H4Vc6jJ2A+jXC4YEQ69yVBbPk0iO/bD6JPtRapakwYQLlV/fEEcIIstzox2pX+/8G79oVtw==
+"@linaria/utils@^4.3.0", "@linaria/utils@^4.3.1":
+  version "4.3.1"
+  resolved "https://registry.npmjs.org/@linaria/utils/-/utils-4.3.1.tgz"
+  integrity sha512-+Rx07/gpqUL8v9rcUs4kt8JS6UkcJn829iofNAf3jVcizl1FyOOD0wRTJPq4Rh5l3AsbUqFCYgoCkHHMAMgK5Q==
   dependencies:
     "@babel/core" "^7.20.2"
     "@babel/plugin-proposal-export-namespace-from" "^7.18.9"
@@ -1848,11 +1848,11 @@
     mkdirp "^0.5.1"
 
 "@linaria/webpack5-loader@^4.1.11":
-  version "4.1.11"
-  resolved "https://registry.npmjs.org/@linaria/webpack5-loader/-/webpack5-loader-4.1.11.tgz"
-  integrity sha512-ixK0Nod+2jo8mOAYOLfLspxPoFtrK4p4TqGaIqKXYt3UORYQdVyPf7ABbgZhUHy6lZNgSnSv8e7HVgDCraZHZw==
+  version "4.1.13"
+  resolved "https://registry.npmjs.org/@linaria/webpack5-loader/-/webpack5-loader-4.1.13.tgz"
+  integrity sha512-8r+pEsRN/GnMmnvw3r3zji27p8vC6dcqpiyhWyOugSMrwzq24mUZiIGhWiVq78oEE3wPFqV/u3HHM9m3pxUlfg==
   dependencies:
-    "@linaria/babel-preset" "^4.3.3"
+    "@linaria/babel-preset" "^4.4.1"
     "@linaria/logger" "^4.0.0"
     enhanced-resolve "^5.3.1"
     mkdirp "^0.5.1"
@@ -2404,6 +2404,14 @@
   integrity sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==
   dependencies:
     "@types/react" "*"
+
+"@types/react-lazy-load-image-component@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@types/react-lazy-load-image-component/-/react-lazy-load-image-component-1.5.2.tgz#b87e814b6b91853b802f04465364ff1e913dce6a"
+  integrity sha512-4NLJsMJVrMv18FuMIkUUBVj/PH9A+BvLKrZC75EWiEFn1IsMrZHgL1tVKw5QBfoa0Qjz6SkWIzEvwcyZ8PgnIg==
+  dependencies:
+    "@types/react" "*"
+    csstype "^3.0.2"
 
 "@types/react@*", "@types/react@^18.0.0":
   version "18.0.27"
@@ -3419,25 +3427,6 @@ call-bind@^1.0.0, call-bind@^1.0.2:
     function-bind "^1.1.1"
     get-intrinsic "^1.0.2"
 
-caller-callsite@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/caller-callsite/-/caller-callsite-2.0.0.tgz"
-  integrity sha512-JuG3qI4QOftFsZyOn1qq87fq5grLIyk1JYd5lJmdA+fG7aQ9pA/i3JIJGcO3q0MrRcHlOt1U+ZeHW8Dq9axALQ==
-  dependencies:
-    callsites "^2.0.0"
-
-caller-path@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/caller-path/-/caller-path-2.0.0.tgz"
-  integrity sha512-MCL3sf6nCSXOwCTzvPKhN18TU7AHTvdtam8DAogxcrJ8Rjfbbg7Lgng64H9Iy+vUV6VGFClN/TyxBkAebLRR4A==
-  dependencies:
-    caller-callsite "^2.0.0"
-
-callsites@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/callsites/-/callsites-2.0.0.tgz"
-  integrity sha512-ksWePWBloaWPxJYQ8TL0JHvtci6G5QTKwQ95RcWAa/lzoAKuAOflGdAK92hpHXjkwb8zLxoLNUoNYZgVsaJzvQ==
-
 callsites@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz"
@@ -3765,16 +3754,6 @@ core-util-is@~1.0.0:
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-cosmiconfig@^5.1.0:
-  version "5.2.1"
-  resolved "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.1.tgz"
-  integrity sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==
-  dependencies:
-    import-fresh "^2.0.0"
-    is-directory "^0.3.1"
-    js-yaml "^3.13.1"
-    parse-json "^4.0.0"
-
 cosmiconfig@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-6.0.0.tgz"
@@ -3796,6 +3775,16 @@ cosmiconfig@^7.0.0:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.10.0"
+
+cosmiconfig@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-8.0.0.tgz"
+  integrity sha512-da1EafcpH6b/TD8vDRaWV7xFINlHlF6zKsGwS1TsuVJTZRkquaS5HTMq7uq6h31619QjbsYl21gVDOm32KM1vQ==
+  dependencies:
+    import-fresh "^3.2.1"
+    js-yaml "^4.1.0"
+    parse-json "^5.0.0"
+    path-type "^4.0.0"
 
 cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
@@ -5669,14 +5658,6 @@ immer@^9.0.7:
   resolved "https://registry.npmjs.org/immer/-/immer-9.0.18.tgz"
   integrity sha512-eAPNpsj7Ax1q6Y/3lm2PmlwRcFzpON7HSNQ3ru5WQH1/PSpnyed/HpNOELl2CxLKoj4r+bAHgdyKqW5gc2Se1A==
 
-import-fresh@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/import-fresh/-/import-fresh-2.0.0.tgz"
-  integrity sha512-eZ5H8rcgYazHbKC3PG4ClHNykCSxtAhxSSEM+2mb+7evD2CKF5V7c0dNum7AdpDh0ZdICwZY9sRSn8f+KH96sg==
-  dependencies:
-    caller-path "^2.0.0"
-    resolve-from "^3.0.0"
-
 import-fresh@^3.0.0, import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz"
@@ -5807,11 +5788,6 @@ is-date-object@^1.0.1, is-date-object@^1.0.5:
   integrity sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==
   dependencies:
     has-tostringtag "^1.0.0"
-
-is-directory@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.npmjs.org/is-directory/-/is-directory-0.3.1.tgz"
-  integrity sha512-yVChGzahRFvbkscn2MlwGismPO12i9+znNruC5gVEntG3qu0xQMzsGg/JFbrsqDOHtHFPci+V5aP5T9I+yeKqw==
 
 is-docker@^2.0.0, is-docker@^2.1.1:
   version "2.2.1"
@@ -7028,11 +7004,6 @@ jsesc@~0.5.0:
   resolved "https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz"
   integrity sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==
 
-json-parse-better-errors@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz"
-  integrity sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==
-
 json-parse-even-better-errors@^2.3.0, json-parse-even-better-errors@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz"
@@ -7224,6 +7195,11 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.npmjs.org/lodash.sortby/-/lodash.sortby-4.7.0.tgz"
   integrity sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -7740,14 +7716,6 @@ parent-module@^1.0.0:
   integrity sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==
   dependencies:
     callsites "^3.0.0"
-
-parse-json@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/parse-json/-/parse-json-4.0.0.tgz"
-  integrity sha512-aOIos8bujGN93/8Ox/jPLh7RwVnPEysynVFE+fQZyg6jKELEHwzgKdLRFHUgXJL6kylijVSBC4BvN9OmsB48Rw==
-  dependencies:
-    error-ex "^1.3.1"
-    json-parse-better-errors "^1.0.1"
 
 parse-json@^5.0.0, parse-json@^5.2.0:
   version "5.2.0"
@@ -8677,6 +8645,14 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+react-lazy-load-image-component@^1.5.6:
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/react-lazy-load-image-component/-/react-lazy-load-image-component-1.5.6.tgz#a4b84257be21b1825680b4e158d167c08aeda5ff"
+  integrity sha512-M0jeJtOlTHgThOfgYM9krSqYbR6ShxROy/KVankwbw9/amPKG1t5GSGN1sei6Cyu8+QJVuyAUvQ+LFtCVTTlKw==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+
 react-loader-spinner@^5.3.4:
   version "5.3.4"
   resolved "https://registry.npmjs.org/react-loader-spinner/-/react-loader-spinner-5.3.4.tgz"
@@ -8928,11 +8904,6 @@ resolve-cwd@^3.0.0:
   integrity sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==
   dependencies:
     resolve-from "^5.0.0"
-
-resolve-from@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/resolve-from/-/resolve-from-3.0.0.tgz"
-  integrity sha512-GnlH6vxLymXJNMBo7XP1fJIzBFbdYt49CuTwmB/6N53t+kMPRMFKz783LlQ4tv28XoQfMWinAJX6WCGf2IlaIw==
 
 resolve-from@^4.0.0:
   version "4.0.0"
