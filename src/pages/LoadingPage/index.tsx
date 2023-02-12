@@ -49,8 +49,10 @@ const LoadingPage = () => {
 
   return (
     <S.LoadingPageContainer>
-      <S.Image src={dog} alt="dog" className="dog" />
-      <S.Text>Loading...</S.Text>
+      <section>
+        <S.Image src={dog} alt="dog" className="dog" />
+        <S.Text>Loading...</S.Text>
+      </section>
       {footprints}
     </S.LoadingPageContainer>
   );
@@ -98,7 +100,7 @@ const S = {
     }
 
     &.footprint {
-      width: 1.5rem;
+      width: 1rem;
       margin-left: 1.4rem;
       transform: rotate(-45deg);
 
