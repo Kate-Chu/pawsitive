@@ -4,6 +4,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import Animals from './pages/Animals';
 import LandingPage from './pages/Homepage';
 import Layout from './layouts/Layout';
+import LoadingPage from './pages/LoadingPage';
 
 const About = React.lazy(() => import('./pages/AboutUs'));
 const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
@@ -22,6 +23,7 @@ const router = createHashRouter([
       { path: 'favorites', element: <Favorites /> },
       { path: 'about-us', element: <About /> },
       { path: 'tutorial', element: <Tutorial /> },
+      { path: 'loading', element: <LoadingPage /> },
     ],
     errorElement: <ErrorPage />,
   },
@@ -32,7 +34,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingPage />}>
       <RouterProvider router={router} />
     </Suspense>
   </React.StrictMode>,

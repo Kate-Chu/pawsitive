@@ -79,9 +79,9 @@ const Homepage = () => {
           </ul>
         </S.Description>
       </S.MapSection>
-      <link rel="preload" href={dog} />
-      <link rel="preload" href={cat} />
-      <link rel="preload" href={food} />
+      <link rel="preload" href={dog} as="dog-image" />
+      <link rel="preload" href={cat} as="cat-image" />
+      <link rel="preload" href={food} as="food-image" />
       <link rel="preconnect" href={OFFICIAL_API} />
       <link rel="dns-prefetch" href={OFFICIAL_API} />
     </S.HomepageContainer>
